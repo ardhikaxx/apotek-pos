@@ -4,11 +4,11 @@
 
 @section('content')
 <!-- Service Features -->
-<div class="row mb-5 g-4 mt-n5 position-relative z-2">
-    <div class="col-md-4">
-        <div class="card border-0 shadow-sm p-3">
+<div class="row mb-5 g-3 g-lg-4 mt-n5 position-relative z-2">
+    <div class="col-12 col-md-4">
+        <div class="card border-0 shadow-sm h-100 p-2 p-md-3">
             <div class="card-body d-flex align-items-center gap-3">
-                <div class="bg-info bg-opacity-10 text-info p-3 rounded-circle">
+                <div class="bg-info bg-opacity-10 text-info p-3 rounded-circle shrink-0">
                     <i class="fa fa-shield-halved fs-4"></i>
                 </div>
                 <div>
@@ -18,10 +18,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="card border-0 shadow-sm p-3">
+    <div class="col-12 col-md-4">
+        <div class="card border-0 shadow-sm h-100 p-2 p-md-3">
             <div class="card-body d-flex align-items-center gap-3">
-                <div class="bg-info bg-opacity-10 text-info p-3 rounded-circle">
+                <div class="bg-info bg-opacity-10 text-info p-3 rounded-circle shrink-0">
                     <i class="fa fa-tags fs-4"></i>
                 </div>
                 <div>
@@ -31,10 +31,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="card border-0 shadow-sm p-3">
+    <div class="col-12 col-md-4">
+        <div class="card border-0 shadow-sm h-100 p-2 p-md-3">
             <div class="card-body d-flex align-items-center gap-3">
-                <div class="bg-info bg-opacity-10 text-info p-3 rounded-circle">
+                <div class="bg-info bg-opacity-10 text-info p-3 rounded-circle shrink-0">
                     <i class="fa fa-user-doctor fs-4"></i>
                 </div>
                 <div>
@@ -46,21 +46,21 @@
     </div>
 </div>
 
-<div class="row mb-5 align-items-center">
-    <div class="col-lg-5">
+<div class="row mb-4 mb-lg-5 align-items-center g-3">
+    <div class="col-12 col-lg-5 text-center text-lg-start">
         <h4 class="fw-bold mb-1">Temukan Kebutuhan Medis Anda</h4>
         <p class="text-muted small mb-0">Cari dari ratusan produk kesehatan yang kami sediakan</p>
     </div>
-    <div class="col-lg-7 mt-3 mt-lg-0">
+    <div class="col-12 col-lg-7">
         <div class="card border-0 shadow-sm rounded-pill overflow-hidden bg-white">
             <div class="card-body p-1">
                 <form action="{{ route('pelanggan.products.index') }}" method="GET" class="d-flex align-items-center">
                     <div class="input-group">
-                        <span class="input-group-text bg-transparent border-0 ps-4">
+                        <span class="input-group-text bg-transparent border-0 ps-3 ps-md-4">
                             <i class="fa fa-search text-muted"></i>
                         </span>
-                        <input type="text" name="search" class="form-control border-0 shadow-none py-3" placeholder="Ketik nama obat atau vitamin..." value="{{ request('search') }}">
-                        <button class="btn btn-info px-4 rounded-pill me-1 my-1 fw-bold shadow-sm">
+                        <input type="text" name="search" class="form-control border-0 shadow-none py-2 py-md-3" placeholder="Ketik nama obat..." value="{{ request('search') }}">
+                        <button class="btn btn-info px-3 px-md-4 rounded-pill me-1 my-1 fw-bold shadow-sm">
                             CARI
                         </button>
                     </div>
