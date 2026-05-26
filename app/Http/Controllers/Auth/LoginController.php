@@ -16,6 +16,39 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+    public function showRegister()
+    {
+        if (Auth::check()) {
+            return $this->redirectByRole();
+        }
+        return view('auth.register');
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name'     => 'required|string|max:100',
+            'email'    => 'required|email|unique:users,email',
+            'phone'    => 'nullable|string|max:20',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        $rolePelanggan = \App\Models\Role::where('name', 'pelanggan')->first();
+
+        $user = \App\Models\User::create([
+            'role_id'   => $rolePelanggan->id,
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'phone'     => $request->phone,
+            'password'  => \Illuminate\Support\Facades\Hash::make($request->password),
+            'is_active' => true,
+        ]);
+
+        Auth::login($user);
+
+        return $this->redirectByRole();
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -49,9 +82,10 @@ class LoginController extends Controller
     {
         $role = Auth::user()->role->name;
         return match($role) {
-            'admin'    => redirect()->route('admin.dashboard'),
-            'apoteker' => redirect()->route('apoteker.dashboard'),
-            default    => redirect('/'),
+            'admin'     => redirect()->route('admin.dashboard'),
+            'apoteker'  => redirect()->route('apoteker.dashboard'),
+            'pelanggan' => redirect()->route('pelanggan.products.index'),
+            default     => redirect('/'),
         };
     }
 }
