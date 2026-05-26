@@ -67,10 +67,10 @@
             </div>
         </div>
 
-        <div class="row mt-5 g-4">
-            <div class="col-md-4">
-                <div class="d-flex gap-3 align-items-center">
-                    <div class="bg-white shadow-sm p-3 rounded-4 text-info">
+        <div class="row mt-4 mt-lg-5 g-3 g-lg-4">
+            <div class="col-12 col-md-4">
+                <div class="d-flex gap-3 align-items-center bg-white p-3 rounded-4 shadow-sm h-100">
+                    <div class="bg-info bg-opacity-10 text-info p-3 rounded-circle shrink-0">
                         <i class="fa fa-user-shield fs-4"></i>
                     </div>
                     <div>
@@ -79,9 +79,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="d-flex gap-3 align-items-center">
-                    <div class="bg-white shadow-sm p-3 rounded-4 text-success">
+            <div class="col-12 col-md-4">
+                <div class="d-flex gap-3 align-items-center bg-white p-3 rounded-4 shadow-sm h-100">
+                    <div class="bg-success bg-opacity-10 text-success p-3 rounded-circle shrink-0">
                         <i class="fa fa-certificate fs-4"></i>
                     </div>
                     <div>
@@ -90,9 +90,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="d-flex gap-3 align-items-center">
-                    <div class="bg-white shadow-sm p-3 rounded-4 text-primary">
+            <div class="col-12 col-md-4">
+                <div class="d-flex gap-3 align-items-center bg-white p-3 rounded-4 shadow-sm h-100">
+                    <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle shrink-0">
                         <i class="fa fa-clock-rotate-left fs-4"></i>
                     </div>
                     <div>
