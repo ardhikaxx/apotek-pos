@@ -3,15 +3,15 @@
 @section('page-title', 'Laporan Penjualan')
 
 @section('content')
-<div class="row mb-4">
-    <div class="col-12">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+    <div>
         <h4 class="fw-bold mb-1">Laporan Penjualan</h4>
-        <p class="text-muted small">Analisis data transaksi dan pendapatan apotek</p>
+        <p class="text-muted small mb-0">Analisis data transaksi dan pendapatan apotek</p>
     </div>
 </div>
 
 <div class="card border-0 shadow-sm mb-4">
-    <div class="card-body p-4">
+    <div class="card-body p-3 p-md-4">
         <form method="GET" class="row g-3 align-items-end">
             <div class="col-md-4">
                 <label class="form-label small fw-bold text-secondary">Dari Tanggal</label>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-4 d-flex gap-2">
                 <button type="submit" class="btn btn-info text-white fw-bold rounded-pill px-4 shadow-sm flex-grow-1">
-                    <i class="fa fa-filter me-2"></i>FILTER DATA
+                    <i class="fa fa-filter me-2"></i>FILTER
                 </button>
                 <a href="{{ route('admin.reports.pdf', request()->query()) }}" class="btn btn-outline-danger rounded-pill px-4" target="_blank">
                     <i class="fa fa-file-pdf me-2"></i>PDF
@@ -41,7 +41,7 @@
 
 <div class="row mb-4">
     <div class="col-md-12">
-        <div class="p-4 bg-primary bg-opacity-10 rounded-4 border border-primary border-opacity-10 d-flex align-items-center justify-content-between">
+        <div class="p-3 p-md-4 bg-primary bg-opacity-10 rounded-4 border border-primary border-opacity-10 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3">
             <div class="d-flex align-items-center">
                 <div class="bg-primary text-white p-3 rounded-circle me-3 shadow-sm">
                     <i class="fa fa-wallet fs-4"></i>
@@ -51,7 +51,7 @@
                     <h2 class="fw-bold mb-0 text-dark">Rp {{ number_format($total, 0, ',', '.') }}</h2>
                 </div>
             </div>
-            <div class="text-end d-none d-md-block">
+            <div class="text-end">
                 <span class="badge bg-white text-primary rounded-pill px-3 py-2 shadow-sm fw-bold">
                     {{ count($transactions) }} Transaksi Ditemukan
                 </span>
