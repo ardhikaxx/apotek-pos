@@ -25,19 +25,28 @@
         <div class="brand text-white fw-bold fs-5">
             <i class="fa fa-clinic-medical me-2 text-info"></i>Apotek POS
         </div>
-        <nav class="nav flex-column mt-2 flex-grow-1">
+        <nav class="nav flex-column mt-2 grow">
             @if(auth()->user()->role->name === 'admin')
                 <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                     <i class="fa fa-tachometer-alt me-2"></i> Dashboard
                 </a>
                 <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
-                    <i class="fa fa-users me-2"></i> Manajemen User
+                    <i class="fa fa-user-shield me-2"></i> Manajemen User
+                </a>
+                <a href="{{ route('admin.customers.index') }}" class="nav-link {{ request()->routeIs('admin.customers.*') ? 'active' : '' }}">
+                    <i class="fa fa-users me-2"></i> Pelanggan
                 </a>
                 <a href="{{ route('admin.categories.index') }}" class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
                     <i class="fa fa-tags me-2"></i> Kategori
                 </a>
                 <a href="{{ route('admin.products.index') }}" class="nav-link {{ request()->routeIs('admin.products.*') ? 'active' : '' }}">
                     <i class="fa fa-pills me-2"></i> Obat / Produk
+                </a>
+                <a href="{{ route('admin.suppliers.index') }}" class="nav-link {{ request()->routeIs('admin.suppliers.*') ? 'active' : '' }}">
+                    <i class="fa fa-truck me-2"></i> Supplier
+                </a>
+                <a href="{{ route('admin.purchases.index') }}" class="nav-link {{ request()->routeIs('admin.purchases.*') ? 'active' : '' }}">
+                    <i class="fa fa-shopping-cart me-2"></i> Pembelian Stok
                 </a>
                 <a href="{{ route('admin.transactions.create') }}" class="nav-link {{ request()->routeIs('admin.transactions.create') ? 'active' : '' }}">
                     <i class="fa fa-cash-register me-2"></i> POS / Kasir
@@ -48,7 +57,7 @@
                 <a href="{{ route('admin.reports') }}" class="nav-link {{ request()->routeIs('admin.reports*') ? 'active' : '' }}">
                     <i class="fa fa-chart-bar me-2"></i> Laporan
                 </a>
-            @else
+            @elseif(auth()->user()->role->name === 'apoteker')
                 <a href="{{ route('apoteker.dashboard') }}" class="nav-link {{ request()->routeIs('apoteker.dashboard') ? 'active' : '' }}">
                     <i class="fa fa-tachometer-alt me-2"></i> Dashboard
                 </a>
@@ -60,6 +69,10 @@
                 </a>
                 <a href="{{ route('apoteker.reports') }}" class="nav-link {{ request()->routeIs('apoteker.reports*') ? 'active' : '' }}">
                     <i class="fa fa-chart-bar me-2"></i> Laporan Hari Ini
+                </a>
+            @elseif(auth()->user()->role->name === 'pelanggan')
+                <a href="{{ route('pelanggan.products.index') }}" class="nav-link {{ request()->routeIs('pelanggan.products.*') ? 'active' : '' }}">
+                    <i class="fa fa-pills me-2"></i> Katalog Obat
                 </a>
             @endif
         </nav>

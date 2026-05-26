@@ -12,13 +12,15 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::with('role')->latest()->paginate(10);
+        $users = User::whereHas('role', function($q) {
+            $q->whereIn('name', ['admin', 'apoteker']);
+        })->with('role')->latest()->paginate(10);
         return view('admin.users.index', compact('users'));
     }
 
     public function create()
     {
-        $roles = Role::all();
+        $roles = Role::whereIn('name', ['admin', 'apoteker'])->get();
         return view('admin.users.create', compact('roles'));
     }
 
@@ -44,7 +46,7 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        $roles = Role::all();
+        $roles = Role::whereIn('name', ['admin', 'apoteker'])->get();
         return view('admin.users.edit', compact('user', 'roles'));
     }
 
