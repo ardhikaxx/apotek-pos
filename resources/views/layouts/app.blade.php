@@ -179,12 +179,12 @@
 
         <div class="user-profile-section">
             <div class="d-flex align-items-center mb-3">
-                <div class="flex-shrink-0">
+                <div class="shrink-0">
                     <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                         <i class="fa fa-user"></i>
                     </div>
                 </div>
-                <div class="flex-grow-1 ms-3 overflow-hidden">
+                <div class="grow ms-3 overflow-hidden">
                     <h6 class="text-white mb-0 text-truncate" style="font-size: 0.85rem;">{{ auth()->user()->name }}</h6>
                     <span class="badge bg-info bg-opacity-10 text-info text-uppercase" style="font-size: 0.6rem;">{{ auth()->user()->role->name }}</span>
                 </div>
