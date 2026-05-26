@@ -3,12 +3,12 @@
 @section('page-title', 'Supplier')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
     <div>
         <h4 class="fw-bold mb-1">Daftar Supplier</h4>
         <p class="text-muted small mb-0">Manajemen data pemasok obat dan alkes</p>
     </div>
-    <a href="{{ route('admin.suppliers.create') }}" class="btn btn-info rounded-pill px-4 shadow-sm fw-bold text-white">
+    <a href="{{ route('admin.suppliers.create') }}" class="btn btn-info rounded-pill px-4 shadow-sm fw-bold text-white w-100 w-sm-auto">
         <i class="fa fa-plus me-2"></i> Tambah Supplier
     </a>
 </div>
