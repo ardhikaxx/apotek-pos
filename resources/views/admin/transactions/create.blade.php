@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .pos-container { min-height: calc(100vh - 180px); }
-    .product-search-card { height: 100%; }
+    .product-search-card { height: 100%; min-height: 400px; }
     .search-result-item { 
         border: 1px solid #f1f5f9;
         transition: all 0.2s;
@@ -20,9 +20,26 @@
     .cart-card { 
         position: sticky;
         top: 90px;
+        height: calc(100vh - 120px);
+        display: flex;
+        flex-direction: column;
+    }
+    @media (max-width: 991.98px) {
+        .cart-card {
+            position: static;
+            height: auto;
+            min-height: 500px;
+            margin-top: 1rem;
+        }
+        .pos-container {
+            flex-direction: column;
+        }
     }
     .cart-item-qty { width: 60px; text-align: center; }
     #search-results { max-height: 550px; overflow-y: auto; scrollbar-width: thin; }
+    @media (max-width: 991.98px) {
+        #search-results { max-height: 400px; }
+    }
     .total-banner {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         color: #fff;
