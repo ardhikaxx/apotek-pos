@@ -3,6 +3,23 @@
 @section('page-title', 'Obat / Produk')
 
 @section('content')
+<div class="row mb-3">
+    <div class="col-md-6">
+        <form action="{{ route('apoteker.products.index') }}" method="GET" class="d-flex gap-2">
+            <input type="text" name="search" class="form-control" placeholder="Cari nama obat..." value="{{ request('search') }}">
+            <button class="btn btn-info text-white"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="{{ route('apoteker.products.expired') }}" class="btn btn-warning me-2">
+            <i class="fa fa-exclamation-triangle me-1"></i> Obat Kadaluarsa
+        </a>
+        <a href="{{ route('apoteker.products.create') }}" class="btn btn-info text-white">
+            <i class="fa fa-plus me-1"></i> Tambah Obat
+        </a>
+    </div>
+</div>
+
 <div class="card border-0 shadow-sm">
     <div class="card-header bg-white fw-semibold">
         <i class="fa fa-pills me-2 text-info"></i>Daftar Produk
@@ -10,15 +27,14 @@
     <div class="card-body p-0">
         <table class="table table-hover table-striped mb-0">
             <thead class="table-light">
-                <tr><th>#</th><th>Nama</th><th>Kategori</th><th>Satuan</th><th>Harga Jual</th><th>Stok</th><th>Aksi</th></tr>
+                <tr><th>#</th><th>Nama</th><th>Kategori</th><th>Harga Jual</th><th>Stok</th><th>Kadaluarsa</th><th>Aksi</th></tr>
             </thead>
             <tbody>
                 @forelse($products as $product)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->name }} <br><small class="text-muted">{{ $product->unit }}</small></td>
                     <td>{{ $product->category->name }}</td>
-                    <td>{{ $product->unit }}</td>
                     <td>Rp {{ number_format($product->selling_price, 0, ',', '.') }}</td>
                     <td>
                         {{ $product->stock }}
@@ -27,9 +43,25 @@
                         @endif
                     </td>
                     <td>
-                        <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#stockModal{{ $product->id }}">
-                            <i class="fa fa-plus-circle"></i> Tambah Stok
-                        </button>
+                        @if($product->expiry_date)
+                            <span class="{{ \Carbon\Carbon::parse($product->expiry_date)->isPast() ? 'text-danger fw-bold' : '' }}">
+                                {{ \Carbon\Carbon::parse($product->expiry_date)->format('d/m/Y') }}
+                            </span>
+                        @else
+                            -
+                        @endif
+                    </td>
+                    <td>
+                        <div class="d-flex gap-1">
+                            <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#stockModal{{ $product->id }}" title="Tambah Stok">
+                                <i class="fa fa-plus-circle"></i>
+                            </button>
+                            <a href="{{ route('apoteker.products.edit', $product) }}" class="btn btn-sm btn-outline-warning" title="Edit"><i class="fa fa-edit"></i></a>
+                            <form method="POST" action="{{ route('apoteker.products.destroy', $product) }}" onsubmit="return confirm('Hapus produk ini?')">
+                                @csrf @method('DELETE')
+                                <button class="btn btn-sm btn-outline-danger" title="Hapus"><i class="fa fa-trash"></i></button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
 

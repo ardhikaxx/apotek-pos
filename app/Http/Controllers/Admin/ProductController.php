@@ -15,6 +15,15 @@ class ProductController extends Controller
         return view('admin.products.index', compact('products'));
     }
 
+    public function expired()
+    {
+        $products = Product::with('category')
+            ->whereNotNull('expiry_date')
+            ->where('expiry_date', '<', today())
+            ->get();
+        return view('admin.products.expired', compact('products'));
+    }
+
     public function create()
     {
         $categories = Category::all();
@@ -30,9 +39,10 @@ class ProductController extends Controller
             'purchase_price' => 'required|numeric|min:0',
             'selling_price'  => 'required|numeric|min:0',
             'stock'          => 'required|integer|min:0',
+            'expiry_date'    => 'nullable|date',
         ]);
 
-        Product::create($request->only(['category_id','name','unit','purchase_price','selling_price','stock']) + ['is_active' => true]);
+        Product::create($request->only(['category_id','name','unit','purchase_price','selling_price','stock', 'expiry_date']) + ['is_active' => true]);
 
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil ditambahkan.');
     }
@@ -52,9 +62,10 @@ class ProductController extends Controller
             'purchase_price' => 'required|numeric|min:0',
             'selling_price'  => 'required|numeric|min:0',
             'stock'          => 'required|integer|min:0',
+            'expiry_date'    => 'nullable|date',
         ]);
 
-        $product->update($request->only(['category_id','name','unit','purchase_price','selling_price','stock']) + ['is_active' => $request->boolean('is_active')]);
+        $product->update($request->only(['category_id','name','unit','purchase_price','selling_price','stock', 'expiry_date']) + ['is_active' => $request->boolean('is_active')]);
 
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil diperbarui.');
     }

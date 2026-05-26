@@ -37,6 +37,9 @@
         <button type="submit" class="btn btn-info w-100 text-white fw-semibold">
             <i class="fa fa-sign-in-alt me-2"></i>Login
         </button>
+        <div class="text-center mt-3">
+            <small>Belum punya akun? <a href="{{ route('register') }}" class="text-info text-decoration-none fw-semibold">Daftar Pelanggan</a></small>
+        </div>
     </form>
 </div>
 @endsection

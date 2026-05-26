@@ -6,9 +6,14 @@
 <div class="card border-0 shadow-sm">
     <div class="card-header bg-white d-flex justify-content-between align-items-center">
         <span class="fw-semibold"><i class="fa fa-pills me-2 text-info"></i>Daftar Produk</span>
-        <a href="{{ route('admin.products.create') }}" class="btn btn-info btn-sm text-white">
-            <i class="fa fa-plus me-1"></i> Tambah Produk
-        </a>
+        <div>
+            <a href="{{ route('admin.products.expired') }}" class="btn btn-warning btn-sm me-1">
+                <i class="fa fa-exclamation-triangle me-1"></i> Obat Kadaluarsa
+            </a>
+            <a href="{{ route('admin.products.create') }}" class="btn btn-info btn-sm text-white">
+                <i class="fa fa-plus me-1"></i> Tambah
+            </a>
+        </div>
     </div>
     <div class="card-body p-0">
         <table class="table table-hover table-striped mb-0">

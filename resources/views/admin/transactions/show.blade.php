@@ -13,7 +13,8 @@
     <div class="card-body">
         <div class="row mb-3">
             <div class="col-6"><small class="text-muted">Kasir</small><div>{{ $transaction->user->name }}</div></div>
-            <div class="col-6"><small class="text-muted">Tanggal</small><div>{{ $transaction->transaction_date->format('d/m/Y H:i') }}</div></div>
+            <div class="col-6"><small class="text-muted">Pelanggan</small><div>{{ $transaction->customer->name ?? 'Umum' }}</div></div>
+            <div class="col-6 mt-2"><small class="text-muted">Tanggal</small><div>{{ $transaction->transaction_date->format('d/m/Y H:i') }}</div></div>
         </div>
         <table class="table table-sm table-striped">
             <thead class="table-light">
