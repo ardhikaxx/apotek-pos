@@ -3,10 +3,10 @@
 @section('page-title', 'Catat Pembelian')
 
 @section('content')
-<div class="row mb-4">
-    <div class="col-12">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+    <div>
         <h4 class="fw-bold mb-1">Pencatatan Stok Masuk</h4>
-        <p class="text-muted small">Input data pembelian obat dari supplier untuk menambah inventori</p>
+        <p class="text-muted small mb-0">Input data pembelian obat dari supplier untuk menambah inventori</p>
     </div>
 </div>
 
@@ -18,7 +18,7 @@
                 <div class="card-header bg-transparent border-0 pt-4 px-4">
                     <h6 class="mb-0 fw-bold text-dark"><i class="fa fa-info-circle me-2 text-primary"></i>Informasi Pembelian</h6>
                 </div>
-                <div class="card-body px-4 pb-4">
+                <div class="card-body p-3 p-md-4">
                     <div class="mb-3">
                         <label class="form-label small fw-bold text-secondary">Pilih Supplier</label>
                         <select name="supplier_id" class="form-select @error('supplier_id') is-invalid @enderror rounded-3" required>
