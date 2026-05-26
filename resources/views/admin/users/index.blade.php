@@ -3,7 +3,7 @@
 @section('page-title', 'Manajemen User')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
     <div>
         <h4 class="fw-bold mb-1">Manajemen User</h4>
         <p class="text-muted small mb-0">Kelola hak akses dan pengguna sistem</p>
@@ -14,7 +14,7 @@
 </div>
 
 <div class="card overflow-hidden">
-    <div class="card-header bg-transparent border-0 pt-4 px-4">
+    <div class="card-header bg-transparent border-0 pt-4 px-3 px-md-4">
         <h5 class="fw-bold mb-0">Daftar Pengguna</h5>
     </div>
     <div class="card-body p-0">
@@ -22,22 +22,22 @@
             <table class="table table-hover align-middle mb-0">
                 <thead class="bg-light text-secondary small text-uppercase fw-bold">
                     <tr>
-                        <th class="px-4 py-3">#</th>
+                        <th class="px-3 px-md-4 py-3">#</th>
                         <th class="py-3">Nama</th>
-                        <th class="py-3">Email</th>
+                        <th class="py-3 text-nowrap">Email</th>
                         <th class="py-3">Role</th>
                         <th class="py-3 text-center">Status</th>
-                        <th class="px-4 py-3 text-end">Aksi</th>
+                        <th class="px-3 px-md-4 py-3 text-end">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse($users as $user)
                     <tr>
-                        <td class="px-4">{{ $loop->iteration }}</td>
+                        <td class="px-3 px-md-4">{{ $loop->iteration }}</td>
                         <td>
                             <div class="fw-bold text-dark">{{ $user->name }}</div>
                         </td>
-                        <td>{{ $user->email }}</td>
+                        <td class="text-nowrap">{{ $user->email }}</td>
                         <td>
                             <span class="badge rounded-pill px-3 py-1 fw-bold bg-opacity-10 {{ $user->role->name === 'admin' ? 'bg-danger text-danger' : 'bg-info text-info' }}">
                                 {{ $user->role->name }}
@@ -48,7 +48,7 @@
                                 {{ $user->is_active ? 'Aktif' : 'Nonaktif' }}
                             </span>
                         </td>
-                        <td class="px-4 text-end">
+                        <td class="px-3 px-md-4 text-end">
                             <div class="d-flex justify-content-end gap-2">
                                 <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-light border-0 rounded-pill hover-warning">
                                     <i class="fa fa-edit text-warning"></i>
@@ -79,7 +79,7 @@
         </div>
     </div>
     @if($users->hasPages())
-    <div class="card-footer bg-transparent border-0 px-4 py-3">
+    <div class="card-footer bg-transparent border-0 px-3 px-md-4 py-3">
         {{ $users->links() }}
     </div>
     @endif
