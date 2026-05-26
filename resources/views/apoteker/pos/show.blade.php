@@ -5,29 +5,29 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-10 col-lg-8">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
             <div>
                 <h4 class="fw-bold mb-1">Detail Transaksi</h4>
                 <p class="text-muted small mb-0">Informasi lengkap transaksi penjualan</p>
             </div>
             <div class="d-flex gap-2">
                 <a href="{{ route('apoteker.pos') }}" class="btn btn-light rounded-pill px-4 shadow-sm fw-bold">
-                    <i class="fa fa-arrow-left me-2"></i> Kembali ke POS
+                    <i class="fa fa-arrow-left me-2"></i> Kembali
                 </a>
                 <a href="{{ route('apoteker.pos.pdf', $transaction) }}" class="btn btn-dark rounded-pill px-4 shadow-sm fw-bold" target="_blank">
-                    <i class="fa fa-print me-2"></i> Cetak Invoice
+                    <i class="fa fa-print me-2"></i> Cetak
                 </a>
             </div>
         </div>
 
         <div class="card border-0 shadow-sm overflow-hidden mb-4">
-            <div class="card-header bg-info bg-opacity-10 border-0 py-3 px-4">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="fw-bold mb-0 text-info">Invoice: {{ $transaction->invoice_number }}</h5>
+            <div class="card-header bg-info bg-opacity-10 border-0 py-3 px-3 px-md-4">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
+                    <h5 class="fw-bold mb-0 text-info text-truncate">Invoice: {{ $transaction->invoice_number }}</h5>
                     <span class="badge bg-info bg-opacity-10 text-info rounded-pill px-3 py-1 fw-bold">{{ $transaction->transaction_date->translatedFormat('d M Y H:i') }}</span>
                 </div>
             </div>
-            <div class="card-body p-4">
+            <div class="card-body p-3 p-md-4">
                 <div class="row mb-4">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label class="form-label fw-bold text-secondary small text-uppercase mb-1">Kasir</label>
