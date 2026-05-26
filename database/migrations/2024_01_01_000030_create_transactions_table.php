@@ -11,10 +11,11 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('customer_id')->nullable()->constrained('users')->onDelete('set null');
             $table->string('invoice_number', 50)->unique();
-            $table->decimal('total', 14, 2);
-            $table->decimal('paid_amount', 14, 2);
-            $table->decimal('change_amount', 14, 2);
+            $table->decimal('total', 15, 2);
+            $table->decimal('paid_amount', 15, 2);
+            $table->decimal('change_amount', 15, 2);
             $table->dateTime('transaction_date');
             $table->timestamps();
         });

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->decimal('purchase_price', 12, 2);
             $table->decimal('selling_price', 12, 2);
             $table->integer('stock')->default(0);
+            $table->date('expiry_date')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
