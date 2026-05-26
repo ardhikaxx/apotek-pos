@@ -3,27 +3,25 @@
 @section('page-title', 'Katalog Obat')
 
 @section('content')
-<div class="row mb-4">
-    <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
-        <div>
-            <h4 class="fw-bold mb-1">Manajemen Inventori</h4>
-            <p class="text-muted small mb-0">Kelola stok dan informasi obat di apotek Anda</p>
-        </div>
-        <div class="d-flex gap-2">
-            <a href="{{ route('apoteker.products.expired') }}" class="btn btn-warning rounded-pill px-3 shadow-sm fw-bold">
-                <i class="fa fa-hourglass-half me-1"></i> Obat Kadaluarsa
-            </a>
-            <a href="{{ route('apoteker.products.create') }}" class="btn btn-info text-white rounded-pill px-4 shadow-sm fw-bold">
-                <i class="fa fa-plus me-1"></i> Tambah Produk
-            </a>
-        </div>
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+    <div>
+        <h4 class="fw-bold mb-1">Manajemen Inventori</h4>
+        <p class="text-muted small mb-0">Kelola stok dan informasi obat di apotek Anda</p>
+    </div>
+    <div class="d-flex flex-wrap gap-2">
+        <a href="{{ route('apoteker.products.expired') }}" class="btn btn-warning rounded-pill px-3 shadow-sm fw-bold">
+            <i class="fa fa-hourglass-half me-1"></i> Kadaluarsa
+        </a>
+        <a href="{{ route('apoteker.products.create') }}" class="btn btn-info text-white rounded-pill px-4 shadow-sm fw-bold">
+            <i class="fa fa-plus me-1"></i> Tambah
+        </a>
     </div>
 </div>
 
 <div class="card overflow-hidden border-0 shadow-sm mb-4">
-    <div class="card-header bg-white py-3 px-4 border-bottom-0">
+    <div class="card-header bg-white py-3 px-3 px-md-4 border-bottom-0">
         <form action="{{ route('apoteker.products.index') }}" method="GET" class="row g-2">
-            <div class="col-md-4">
+            <div class="col-12 col-md-5 col-lg-4">
                 <div class="input-group">
                     <span class="input-group-text bg-light border-0"><i class="fa fa-search text-muted"></i></span>
                     <input type="text" name="search" class="form-control bg-light border-0" placeholder="Cari nama obat..." value="{{ request('search') }}">
