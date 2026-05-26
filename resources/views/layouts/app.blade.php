@@ -69,6 +69,25 @@
             display: flex;
             flex-direction: column;
         }
+
+        .sidebar-overlay {
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1040;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .sidebar-overlay.mobile-active {
+            visibility: visible;
+            opacity: 1;
+        }
         
         @media (max-width: 991.98px) {
             .sidebar {
@@ -81,25 +100,6 @@
             .main-content {
                 margin-left: 0;
                 padding: 1rem;
-            }
-            .sidebar-overlay {
-                visibility: hidden;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                background: rgba(15, 23, 42, 0.5);
-                backdrop-filter: blur(4px);
-                z-index: 1040;
-                opacity: 0;
-                transition: all 0.3s ease;
-                pointer-events: none;
-            }
-            .sidebar-overlay.mobile-active {
-                visibility: visible;
-                opacity: 1;
-                pointer-events: auto;
             }
             .topbar {
                 margin: -1rem -1rem 1rem;
@@ -348,6 +348,13 @@
                         input.type = 'password';
                         icon.classList.replace('fa-eye-slash', 'fa-eye');
                     }
+                });
+            });
+        });
+    </script>
+    @stack('scripts')
+</body>
+</html>
                 });
             });
         });
