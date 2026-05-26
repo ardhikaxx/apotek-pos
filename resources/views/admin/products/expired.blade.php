@@ -3,12 +3,12 @@
 @section('page-title', 'Obat Kadaluarsa')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
     <div>
         <h4 class="fw-bold mb-1">Obat Kadaluarsa</h4>
         <p class="text-muted small mb-0">Daftar produk yang telah melewati masa berlaku</p>
     </div>
-    <a href="{{ route('admin.products.index') }}" class="btn btn-light rounded-pill px-4 shadow-sm fw-bold">
+    <a href="{{ route('admin.products.index') }}" class="btn btn-light rounded-pill px-4 shadow-sm fw-bold w-100 w-sm-auto">
         <i class="fa fa-arrow-left me-2"></i> Kembali
     </a>
 </div>
@@ -24,7 +24,7 @@
 </div>
 
 <div class="card overflow-hidden">
-    <div class="card-header bg-transparent border-0 pt-4 px-4">
+    <div class="card-header bg-transparent border-0 pt-4 px-3 px-md-4">
         <h5 class="fw-bold mb-0 text-danger">Produk Kadaluarsa</h5>
     </div>
     <div class="card-body p-0">
