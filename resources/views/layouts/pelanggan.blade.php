@@ -40,7 +40,7 @@
         }
         .footer { 
             background: #0f172a; 
-            color: #94a3b8; 
+            color: #ffffff; 
             padding: 60px 0; 
             margin-top: 80px; 
         }
@@ -75,10 +75,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="{{ route('pelanggan.products.index') }}">
-                <div class="bg-info bg-opacity-10 p-2 rounded-3 me-2">
-                    <i class="fa fa-clinic-medical text-info"></i>
+                <div class="bg-info bg-opacity-10 px-3 py-2 rounded-3 me-2">
+                    <i class="fa fa-mortar-pestle text-info"></i>
                 </div>
-                APOTEK POS
+                APOTEK
             </a>
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <i class="fa fa-bars text-primary"></i>
@@ -131,59 +131,25 @@
         @yield('content')
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <a class="navbar-brand d-flex align-items-center mb-4 p-0 text-white" href="#">
-                        <div class="bg-info bg-opacity-20 p-2 rounded-3 me-2">
-                            <i class="fa fa-clinic-medical text-info"></i>
-                        </div>
-                        APOTEK POS
-                    </a>
-                    <p class="small opacity-50 mb-4" style="max-width: 400px;">Kami hadir untuk memudahkan Anda dalam mengakses obat-obatan berkualitas secara online dengan pelayanan yang ramah dan pengiriman yang cepat.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-white opacity-25 hover-opacity-100"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="#" class="text-white opacity-25 hover-opacity-100"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="#" class="text-white opacity-25 hover-opacity-100"><i class="fab fa-twitter fa-lg"></i></a>
-                    </div>
+    <footer class="footer py-5">
+        <div class="container text-center">
+            <a class="navbar-brand d-inline-flex align-items-center mb-3 p-0 text-white" href="#">
+                <div class="bg-info bg-opacity-20 px-3 py-2 rounded-3 me-2">
+                    <i class="fa fa-mortar-pestle text-white"></i>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h6 class="text-white fw-bold mb-4">Layanan</h6>
-                    <ul class="list-unstyled small d-grid gap-2">
-                        <li><a href="#" class="text-decoration-none text-muted hover-text-white transition">Katalog Obat</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted hover-text-white transition">Konsultasi Apoteker</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted hover-text-white transition">Cek Stok</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h6 class="text-white fw-bold mb-4">Hubungi Kami</h6>
-                    <ul class="list-unstyled small d-grid gap-3">
-                        <li class="d-flex align-items-start gap-3">
-                            <i class="fa fa-phone text-info mt-1"></i>
-                            <div>
-                                <span class="d-block text-white fw-bold">Telepon</span>
-                                <span class="opacity-50">021-1234-5678</span>
-                            </div>
-                        </li>
-                        <li class="d-flex align-items-start gap-3">
-                            <i class="fa fa-map-marker-alt text-info mt-1"></i>
-                            <div>
-                                <span class="d-block text-white fw-bold">Lokasi</span>
-                                <span class="opacity-50">Jl. Kesehatan No. 123, Jakarta Selatan</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                APOTEK
+            </a>
+            <p class="small opacity-50 mb-4 mx-auto" style="max-width: 500px;">
+                Melayani kebutuhan obat-obatan dan vitamin asli dengan pelayanan terpercaya.
+                <br>Jl. Kesehatan No. 123, Jakarta Selatan
+            </p>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="#" class="text-white opacity-50 hover-opacity-100 transition"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-white opacity-50 hover-opacity-100 transition"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-white opacity-50 hover-opacity-100 transition"><i class="fab fa-whatsapp fa-lg"></i></a>
             </div>
-            <hr class="my-5 border-secondary opacity-25">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-                <span class="small opacity-50">&copy; {{ date('Y') }} Apotek POS. All rights reserved.</span>
-                <div class="d-flex gap-4 small opacity-50">
-                    <a href="#" class="text-white text-decoration-none">Privacy Policy</a>
-                    <a href="#" class="text-white text-decoration-none">Terms of Service</a>
-                </div>
-            </div>
+            <hr class="border-secondary opacity-10 mb-4">
+            <p class="small opacity-50 mb-0">&copy; {{ date('Y') }} Apotek. All rights reserved.</p>
         </div>
     </footer>
 
