@@ -3,17 +3,17 @@
 @section('page-title', 'Overview Apoteker')
 
 @section('content')
-<div class="row mb-4">
-    <div class="col-12">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+    <div>
         <h4 class="fw-bold mb-1">Selamat Datang, {{ auth()->user()->name }}!</h4>
-        <p class="text-muted small">Ringkasan aktivitas dan performa penjualan Anda hari ini</p>
+        <p class="text-muted small mb-0">Ringkasan aktivitas dan performa penjualan Anda hari ini</p>
     </div>
 </div>
 
-<div class="row g-4 mb-5">
-    <div class="col-xl-4 col-md-6">
-        <div class="card h-100 p-2">
-            <div class="card-body">
+<div class="row g-3 g-md-4 mb-5">
+    <div class="col-12 col-sm-6 col-xl-4">
+        <div class="card h-100 p-3 p-md-4">
+            <div class="card-body p-0">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="bg-info bg-opacity-10 text-info p-3 rounded-4">
                         <i class="fa fa-cash-register fs-4"></i>
@@ -31,9 +31,9 @@
         </div>
     </div>
     
-    <div class="col-xl-4 col-md-6">
-        <div class="card h-100 p-2">
-            <div class="card-body">
+    <div class="col-12 col-sm-6 col-xl-4">
+        <div class="card h-100 p-3 p-md-4">
+            <div class="card-body p-0">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="bg-success bg-opacity-10 text-success p-3 rounded-4">
                         <i class="fa fa-wallet fs-4"></i>
@@ -49,9 +49,9 @@
         </div>
     </div>
     
-    <div class="col-xl-4 col-md-6">
-        <div class="card h-100 p-2">
-            <div class="card-body">
+    <div class="col-12 col-sm-6 col-xl-4">
+        <div class="card h-100 p-3 p-md-4">
+            <div class="card-body p-0">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="bg-warning bg-opacity-10 text-warning p-3 rounded-4">
                         <i class="fa fa-boxes-stacked fs-4"></i>
@@ -79,7 +79,7 @@
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-header bg-transparent border-0 py-4 px-4 d-flex align-items-center justify-content-between">
+            <div class="card-header bg-transparent border-0 py-3 py-md-4 px-3 px-md-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
                 <div>
                     <h5 class="fw-bold mb-1">Transaksi Anda Hari Ini</h5>
                     <p class="text-muted small mb-0">Daftar transaksi yang baru saja Anda selesaikan</p>
