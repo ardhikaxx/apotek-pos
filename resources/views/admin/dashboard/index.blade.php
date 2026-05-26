@@ -4,9 +4,9 @@
 
 @section('content')
 <div class="row g-4 mb-5">
-    <div class="col-xl-3 col-md-6">
-        <div class="card h-100 p-2">
-            <div class="card-body">
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card h-100 p-3 p-md-4">
+            <div class="card-body p-0">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-4">
                         <i class="fa fa-pills fs-4"></i>
@@ -24,9 +24,9 @@
         </div>
     </div>
     
-    <div class="col-xl-3 col-md-6">
-        <div class="card h-100 p-2">
-            <div class="card-body">
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card h-100 p-3 p-md-4">
+            <div class="card-body p-0">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="bg-info bg-opacity-10 text-info p-3 rounded-4">
                         <i class="fa fa-users fs-4"></i>
@@ -44,9 +44,9 @@
         </div>
     </div>
     
-    <div class="col-xl-3 col-md-6">
-        <div class="card h-100 p-2">
-            <div class="card-body">
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card h-100 p-3 p-md-4">
+            <div class="card-body p-0">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="bg-success bg-opacity-10 text-success p-3 rounded-4">
                         <i class="fa fa-wallet fs-4"></i>
@@ -62,9 +62,9 @@
         </div>
     </div>
     
-    <div class="col-xl-3 col-md-6">
-        <div class="card h-100 p-2">
-            <div class="card-body">
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card h-100 p-3 p-md-4">
+            <div class="card-body p-0">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="bg-warning bg-opacity-10 text-warning p-3 rounded-4">
                         <i class="fa fa-boxes-stacked fs-4"></i>
