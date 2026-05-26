@@ -3,42 +3,83 @@
 @section('page-title', 'Detail Transaksi')
 
 @section('content')
-<div class="card border-0 shadow-sm" style="max-width:640px">
-    <div class="card-header bg-white d-flex justify-content-between align-items-center">
-        <span class="fw-semibold"><i class="fa fa-receipt me-2 text-info"></i>{{ $transaction->invoice_number }}</span>
-        <a href="{{ route('admin.transactions.pdf', $transaction) }}" class="btn btn-sm btn-outline-secondary" target="_blank">
-            <i class="fa fa-print me-1"></i>Cetak PDF
-        </a>
-    </div>
-    <div class="card-body">
-        <div class="row mb-3">
-            <div class="col-6"><small class="text-muted">Kasir</small><div>{{ $transaction->user->name }}</div></div>
-            <div class="col-6"><small class="text-muted">Pelanggan</small><div>{{ $transaction->customer->name ?? 'Umum' }}</div></div>
-            <div class="col-6 mt-2"><small class="text-muted">Tanggal</small><div>{{ $transaction->transaction_date->format('d/m/Y H:i') }}</div></div>
+<div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="fw-bold mb-1">Detail Transaksi</h4>
+                <p class="text-muted small mb-0">Informasi lengkap transaksi penjualan</p>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="{{ route('admin.transactions.index') }}" class="btn btn-light rounded-pill px-4 shadow-sm fw-bold">
+                    <i class="fa fa-arrow-left me-2"></i> Kembali
+                </a>
+                <a href="{{ route('admin.transactions.pdf', $transaction) }}" class="btn btn-dark rounded-pill px-4 shadow-sm fw-bold" target="_blank">
+                    <i class="fa fa-print me-2"></i> Cetak Invoice
+                </a>
+            </div>
         </div>
-        <table class="table table-sm table-striped">
-            <thead class="table-light">
-                <tr><th>Produk</th><th>Qty</th><th>Harga</th><th>Subtotal</th></tr>
-            </thead>
-            <tbody>
-                @foreach($transaction->items as $item)
-                <tr>
-                    <td>{{ $item->product->name }}</td>
-                    <td>{{ $item->qty }} {{ $item->product->unit }}</td>
-                    <td>Rp {{ number_format($item->unit_price, 0, ',', '.') }}</td>
-                    <td>Rp {{ number_format($item->subtotal, 0, ',', '.') }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-            <tfoot>
-                <tr class="fw-bold"><td colspan="3">Total</td><td>Rp {{ number_format($transaction->total, 0, ',', '.') }}</td></tr>
-                <tr><td colspan="3">Bayar</td><td>Rp {{ number_format($transaction->paid_amount, 0, ',', '.') }}</td></tr>
-                <tr class="text-success"><td colspan="3">Kembali</td><td>Rp {{ number_format($transaction->change_amount, 0, ',', '.') }}</td></tr>
-            </tfoot>
-        </table>
-        <a href="{{ route('admin.transactions.index') }}" class="btn btn-secondary btn-sm">
-            <i class="fa fa-arrow-left me-1"></i>Kembali
-        </a>
+
+        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+            <div class="card-header bg-primary bg-opacity-10 border-0 py-3 px-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="fw-bold mb-0 text-primary">Invoice: {{ $transaction->invoice_number }}</h5>
+                    <span class="badge bg-primary rounded-pill px-3">{{ $transaction->transaction_date->format('d M Y H:i') }}</span>
+                </div>
+            </div>
+            <div class="card-body p-4">
+                <div class="row mb-4">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <label class="form-label fw-bold text-secondary small text-uppercase mb-1">Kasir</label>
+                        <div class="h6 fw-bold mb-0 text-dark">{{ $transaction->user->name }}</div>
+                    </div>
+                    <div class="col-sm-6 text-sm-end">
+                        <label class="form-label fw-bold text-secondary small text-uppercase mb-1">Pelanggan</label>
+                        <div class="h6 fw-bold mb-0 text-dark">{{ $transaction->customer->name ?? 'Pelanggan Umum' }}</div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead class="bg-light text-secondary small text-uppercase fw-bold">
+                            <tr>
+                                <th class="py-3">Produk</th>
+                                <th class="py-3 text-center">Qty</th>
+                                <th class="py-3 text-end">Harga Satuan</th>
+                                <th class="py-3 text-end">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($transaction->items as $item)
+                            <tr>
+                                <td class="py-3">
+                                    <div class="fw-bold text-dark">{{ $item->product->name }}</div>
+                                    <small class="text-muted">{{ $item->product->unit }}</small>
+                                </td>
+                                <td class="py-3 text-center">{{ $item->qty }}</td>
+                                <td class="py-3 text-end">Rp {{ number_format($item->unit_price, 0, ',', '.') }}</td>
+                                <td class="py-3 text-end fw-bold">Rp {{ number_format($item->subtotal, 0, ',', '.') }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                        <tfoot class="border-top-0">
+                            <tr>
+                                <td colspan="3" class="text-end py-3 text-secondary">Total Belanja</td>
+                                <td class="text-end py-3 h5 fw-bold mb-0">Rp {{ number_format($transaction->total, 0, ',', '.') }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text-end py-2 text-secondary border-0">Jumlah Bayar</td>
+                                <td class="text-end py-2 border-0">Rp {{ number_format($transaction->paid_amount, 0, ',', '.') }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text-end py-2 text-success fw-bold border-0">Kembalian</td>
+                                <td class="text-end py-2 text-success fw-bold border-0 h5 mb-0">Rp {{ number_format($transaction->change_amount, 0, ',', '.') }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
