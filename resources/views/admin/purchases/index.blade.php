@@ -3,7 +3,7 @@
 @section('page-title', 'Pembelian Obat')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
     <div>
         <h4 class="fw-bold mb-1">Daftar Pembelian</h4>
         <p class="text-muted small mb-0">Kelola riwayat pembelian stok obat dari supplier</p>
