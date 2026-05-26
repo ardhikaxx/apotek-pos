@@ -3,20 +3,18 @@
 @section('page-title', 'Katalog Obat')
 
 @section('content')
-<div class="row mb-4">
-    <div class="col-12 d-flex justify-content-between align-items-center">
-        <div>
-            <h4 class="fw-bold mb-0">Manajemen Inventori</h4>
-            <p class="text-muted small mb-0">Kelola stok dan informasi obat di apotek Anda</p>
-        </div>
-        <div class="d-flex gap-2">
-            <a href="{{ route('admin.products.expired') }}" class="btn btn-warning rounded-pill px-3 shadow-sm">
-                <i class="fa fa-hourglass-half me-1"></i> Obat Kadaluarsa
-            </a>
-            <a href="{{ route('admin.products.create') }}" class="btn btn-info text-white rounded-pill px-4 shadow-sm fw-bold">
-                <i class="fa fa-plus me-1"></i> Tambah Produk
-            </a>
-        </div>
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+    <div>
+        <h4 class="fw-bold mb-0">Manajemen Inventori</h4>
+        <p class="text-muted small mb-0">Kelola stok dan informasi obat di apotek Anda</p>
+    </div>
+    <div class="d-flex flex-column flex-sm-row gap-2">
+        <a href="{{ route('admin.products.expired') }}" class="btn btn-warning rounded-pill px-3 shadow-sm w-100 w-sm-auto">
+            <i class="fa fa-hourglass-half me-1"></i> Obat Kadaluarsa
+        </a>
+        <a href="{{ route('admin.products.create') }}" class="btn btn-info text-white rounded-pill px-4 shadow-sm fw-bold w-100 w-sm-auto">
+            <i class="fa fa-plus me-1"></i> Tambah Produk
+        </a>
     </div>
 </div>
 
