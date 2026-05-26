@@ -75,15 +75,15 @@
                 transform: translateX(-100%);
                 z-index: 1050;
             }
-            .sidebar.show {
-                transform: translateX(0);
+            .sidebar.mobile-active {
+                transform: translateX(0) !important;
             }
             .main-content {
                 margin-left: 0;
                 padding: 1rem;
             }
             .sidebar-overlay {
-                display: none;
+                visibility: hidden;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -93,11 +93,13 @@
                 backdrop-filter: blur(4px);
                 z-index: 1040;
                 opacity: 0;
-                transition: opacity 0.3s ease;
+                transition: all 0.3s ease;
+                pointer-events: none;
             }
-            .sidebar-overlay.show {
-                display: block;
+            .sidebar-overlay.mobile-active {
+                visibility: visible;
                 opacity: 1;
+                pointer-events: auto;
             }
             .topbar {
                 margin: -1rem -1rem 1rem;
@@ -160,7 +162,8 @@
     @stack('styles')
 </head>
 <body>
-    <div class="sidebar d-flex flex-column">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar d-flex flex-column" id="sidebar">
         <div class="brand">
             <div class="bg-info bg-opacity-10 p-2 rounded-3 me-3">
                 <i class="fa fa-clinic-medical text-info fs-4"></i>
@@ -323,9 +326,10 @@
             const sidebarClose = document.getElementById('sidebarClose');
             const sidebarOverlay = document.getElementById('sidebarOverlay');
 
-            function toggleSidebar() {
-                sidebar.classList.toggle('show');
-                sidebarOverlay.classList.toggle('show');
+            function toggleSidebar(e) {
+                if (e) e.preventDefault();
+                sidebar.classList.toggle('mobile-active');
+                sidebarOverlay.classList.toggle('mobile-active');
                 document.body.classList.toggle('overflow-hidden');
             }
 
@@ -349,8 +353,5 @@
         });
     </script>
     @stack('scripts')
-</body>
-</html>
-'scripts')
 </body>
 </html>
