@@ -166,6 +166,9 @@
                 <i class="fa fa-clinic-medical text-info fs-4"></i>
             </div>
             <span class="text-white fw-bold fs-5 tracking-tight">Apotek POS</span>
+            <button class="btn btn-link text-white d-lg-none ms-auto p-0" id="sidebarClose">
+                <i class="fa fa-times fs-5"></i>
+            </button>
         </div>
         
         <div class="py-3 overflow-y-auto grow">
