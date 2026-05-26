@@ -3,7 +3,7 @@
 @section('page-title', 'Kategori')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
     <div>
         <h4 class="fw-bold mb-1">Kategori Produk</h4>
         <p class="text-muted small mb-0">Kelola pengelompokan produk obat-obatan</p>
@@ -14,7 +14,7 @@
 </div>
 
 <div class="card overflow-hidden">
-    <div class="card-header bg-transparent border-0 pt-4 px-4">
+    <div class="card-header bg-transparent border-0 pt-4 px-3 px-md-4">
         <h5 class="fw-bold mb-0">Daftar Kategori</h5>
     </div>
     <div class="card-body p-0">
@@ -22,16 +22,16 @@
             <table class="table table-hover align-middle mb-0">
                 <thead class="bg-light text-secondary small text-uppercase fw-bold">
                     <tr>
-                        <th class="px-4 py-3">#</th>
+                        <th class="px-3 px-md-4 py-3">#</th>
                         <th class="py-3">Nama Kategori</th>
                         <th class="py-3 text-center">Jumlah Produk</th>
-                        <th class="px-4 py-3 text-end">Aksi</th>
+                        <th class="px-3 px-md-4 py-3 text-end">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse($categories as $cat)
                     <tr>
-                        <td class="px-4">{{ $loop->iteration }}</td>
+                        <td class="px-3 px-md-4">{{ $loop->iteration }}</td>
                         <td>
                             <div class="fw-bold text-dark">{{ $cat->name }}</div>
                         </td>
@@ -40,7 +40,7 @@
                                 {{ $cat->products_count }} Produk
                             </span>
                         </td>
-                        <td class="px-4 text-end">
+                        <td class="px-3 px-md-4 text-end">
                             <div class="d-flex justify-content-end gap-2">
                                 <a href="{{ route('admin.categories.edit', $cat) }}" class="btn btn-sm btn-light border-0 rounded-pill hover-warning">
                                     <i class="fa fa-edit text-warning"></i>
@@ -69,7 +69,7 @@
         </div>
     </div>
     @if($categories->hasPages())
-    <div class="card-footer bg-transparent border-0 px-4 py-3">
+    <div class="card-footer bg-transparent border-0 px-3 px-md-4 py-3">
         {{ $categories->links() }}
     </div>
     @endif
