@@ -6,6 +6,7 @@
 <style>
     .product-item { cursor: pointer; }
     .product-item:hover { background: #f0f9ff; }
+    #search-results { max-height: 400px; overflow-y: auto; }
 </style>
 @endpush
 
@@ -24,6 +25,15 @@
         <div class="card border-0 shadow-sm">
             <div class="card-header bg-white fw-semibold"><i class="fa fa-shopping-cart me-2 text-success"></i>Keranjang</div>
             <div class="card-body p-0">
+                <div class="p-3 border-bottom">
+                    <label class="form-label small fw-semibold">Pilih Pelanggan (Opsional)</label>
+                    <select id="customer-id" class="form-select form-select-sm">
+                        <option value="">-- Umum / Tanpa Nama --</option>
+                        @foreach($customers as $customer)
+                            <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <table class="table table-sm mb-0" id="cart-table">
                     <thead class="table-light">
                         <tr><th>Produk</th><th>Qty</th><th>Subtotal</th><th></th></tr>
@@ -77,23 +87,42 @@ let cart = [];
 let searchTimeout;
 const formatRp = n => 'Rp ' + parseInt(n).toLocaleString('id-ID');
 
+// Function to fetch and display products
+function fetchProducts(q = '') {
+    const el = document.getElementById('search-results');
+    el.innerHTML = '<div class="text-center py-3"><div class="spinner-border spinner-border-sm text-info"></div></div>';
+    
+    fetch(`{{ route('apoteker.pos.search') }}?q=${encodeURIComponent(q)}`)
+    .then(r => r.json())
+    .then(data => {
+        if (!data.length) { 
+            el.innerHTML = '<p class="text-muted small">Produk tidak ditemukan.</p>'; 
+            return; 
+        }
+        el.innerHTML = '<div class="list-group">' + data.map(p =>
+            `<button type="button" class="list-group-item list-group-item-action product-item d-flex justify-content-between" onclick="addToCart(${p.id},'${p.name.replace(/'/g,"\\'")}',${p.selling_price},${p.stock},'${p.unit}')">
+                <span>${p.name} <small class="text-muted">(${p.unit})</small></span>
+                <span class="text-info fw-semibold">${formatRp(p.selling_price)} <small class="text-muted">stok: ${p.stock}</small></span>
+            </button>`
+        ).join('') + '</div>';
+    })
+    .catch(err => {
+        console.error('Error fetching products:', err);
+        el.innerHTML = '<p class="text-danger small">Gagal memuat produk. Coba lagi.</p>';
+    });
+}
+
+// Initial fetch on page load
+document.addEventListener('DOMContentLoaded', () => {
+    fetchProducts();
+});
+
 document.getElementById('search-input').addEventListener('input', function () {
     clearTimeout(searchTimeout);
     const q = this.value.trim();
-    if (q.length < 2) { document.getElementById('search-results').innerHTML = ''; return; }
+    
     searchTimeout = setTimeout(() => {
-        fetch(`{{ route('apoteker.pos.search') }}?q=${encodeURIComponent(q)}`)
-        .then(r => r.json())
-        .then(data => {
-            const el = document.getElementById('search-results');
-            if (!data.length) { el.innerHTML = '<p class="text-muted small">Produk tidak ditemukan.</p>'; return; }
-            el.innerHTML = '<div class="list-group">' + data.map(p =>
-                `<button type="button" class="list-group-item list-group-item-action product-item d-flex justify-content-between" onclick="addToCart(${p.id},'${p.name.replace(/'/g,"\\'")}',${p.selling_price},${p.stock},'${p.unit}')">
-                    <span>${p.name} <small class="text-muted">(${p.unit})</small></span>
-                    <span class="text-info fw-semibold">${formatRp(p.selling_price)} <small class="text-muted">stok: ${p.stock}</small></span>
-                </button>`
-            ).join('') + '</div>';
-        });
+        fetchProducts(q);
     }, 300);
 });
 
@@ -155,6 +184,7 @@ document.getElementById('paid-input').addEventListener('input', updateTotal);
 
 document.getElementById('btn-checkout').addEventListener('click', function () {
     const paid = parseFloat(document.getElementById('paid-input').value);
+    const customerId = document.getElementById('customer-id').value;
     const items = cart.map(i => ({ id: i.id, qty: i.qty }));
 
     fetch('{{ route('apoteker.pos.store') }}', {
@@ -163,7 +193,7 @@ document.getElementById('btn-checkout').addEventListener('click', function () {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
         },
-        body: JSON.stringify({ items, paid_amount: paid })
+        body: JSON.stringify({ items, paid_amount: paid, customer_id: customerId })
     })
     .then(r => r.json())
     .then(data => {
