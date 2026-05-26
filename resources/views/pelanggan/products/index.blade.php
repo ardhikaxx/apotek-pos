@@ -9,7 +9,7 @@
         <div class="card border-0 shadow-sm p-3">
             <div class="card-body d-flex align-items-center gap-3">
                 <div class="bg-info bg-opacity-10 text-info p-3 rounded-circle">
-                    <i class="fa fa-shield-check fs-4"></i>
+                    <i class="fa fa-shield-halved fs-4"></i>
                 </div>
                 <div>
                     <h6 class="fw-bold mb-0">100% Produk Asli</h6>
@@ -22,11 +22,11 @@
         <div class="card border-0 shadow-sm p-3">
             <div class="card-body d-flex align-items-center gap-3">
                 <div class="bg-success bg-opacity-10 text-success p-3 rounded-circle">
-                    <i class="fa fa-truck-fast fs-4"></i>
+                    <i class="fa fa-tags fs-4"></i>
                 </div>
                 <div>
-                    <h6 class="fw-bold mb-0">Pengiriman Cepat</h6>
-                    <small class="text-muted">Sampai di hari yang sama</small>
+                    <h6 class="fw-bold mb-0">Harga Terjangkau</h6>
+                    <small class="text-muted">Lebih hemat untuk keluarga Anda</small>
                 </div>
             </div>
         </div>
