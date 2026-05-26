@@ -21,7 +21,7 @@
             color: #334155;
         }
         .sidebar { 
-            min-height: 100vh; 
+            height: 100vh; 
             background: var(--sidebar-bg); 
             width: 260px; 
             position: fixed; 
@@ -30,6 +30,8 @@
             z-index: 1000;
             transition: all 0.3s;
             box-shadow: 4px 0 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
         }
         .sidebar .brand { 
             padding: 1.5rem; 
@@ -106,6 +108,15 @@
         }
         .page-item.active .page-link { background-color: var(--primary-color); box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2); }
         .page-link:hover { background-color: #f1f5f9; color: var(--primary-color); }
+
+        /* Modern Thin Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.2); border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.5); }
+        
+        /* Firefox Support */
+        * { scrollbar-width: thin; scrollbar-color: rgba(148, 163, 184, 0.2) transparent; }
     </style>
     @stack('styles')
 </head>
@@ -119,11 +130,11 @@
         </div>
         
         <div class="py-3 overflow-y-auto grow">
-            <small class="text-uppercase px-4 mb-2 d-block text-muted fw-bold" style="font-size: 0.65rem; letter-spacing: 0.05em;">Menu Utama</small>
+            <small class="text-uppercase px-4 mb-2 d-block text-white opacity-50 fw-bold" style="font-size: 0.65rem; letter-spacing: 0.05em;">Menu Utama</small>
             <nav class="nav flex-column">
                 @if(auth()->user()->role->name === 'admin')
                     <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-                        <i class="fa fa-grid-2 me-2"></i> Dashboard
+                        <i class="fa fa-gauge-high me-2"></i> Dashboard
                     </a>
                     <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
                         <i class="fa fa-user-shield me-2"></i> Manajemen User
@@ -132,7 +143,7 @@
                         <i class="fa fa-users me-2"></i> Pelanggan
                     </a>
                     
-                    <small class="text-uppercase px-4 mt-4 mb-2 d-block text-muted fw-bold" style="font-size: 0.65rem; letter-spacing: 0.05em;">Inventori & Stok</small>
+                    <small class="text-uppercase px-4 mt-4 mb-2 d-block text-white opacity-50 fw-bold" style="font-size: 0.65rem; letter-spacing: 0.05em;">Inventori & Stok</small>
                     <a href="{{ route('admin.categories.index') }}" class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
                         <i class="fa fa-tags me-2"></i> Kategori
                     </a>
@@ -146,7 +157,7 @@
                         <i class="fa fa-shopping-cart me-2"></i> Pembelian Stok
                     </a>
                     
-                    <small class="text-uppercase px-4 mt-4 mb-2 d-block text-muted fw-bold" style="font-size: 0.65rem; letter-spacing: 0.05em;">Transaksi</small>
+                    <small class="text-uppercase px-4 mt-4 mb-2 d-block text-white opacity-50 fw-bold" style="font-size: 0.65rem; letter-spacing: 0.05em;">Transaksi</small>
                     <a href="{{ route('admin.transactions.create') }}" class="nav-link {{ request()->routeIs('admin.transactions.create') ? 'active' : '' }}">
                         <i class="fa fa-cash-register me-2"></i> POS / Kasir
                     </a>
@@ -158,7 +169,7 @@
                     </a>
                 @elseif(auth()->user()->role->name === 'apoteker')
                     <a href="{{ route('apoteker.dashboard') }}" class="nav-link {{ request()->routeIs('apoteker.dashboard') ? 'active' : '' }}">
-                        <i class="fa fa-grid-2 me-2"></i> Dashboard
+                        <i class="fa fa-gauge-high me-2"></i> Dashboard
                     </a>
                     <a href="{{ route('apoteker.pos') }}" class="nav-link {{ request()->routeIs('apoteker.pos') ? 'active' : '' }}">
                         <i class="fa fa-cash-register me-2"></i> POS / Kasir
