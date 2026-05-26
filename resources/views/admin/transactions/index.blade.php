@@ -3,18 +3,18 @@
 @section('page-title', 'Daftar Transaksi')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
     <div>
         <h4 class="fw-bold mb-1">Riwayat Transaksi</h4>
         <p class="text-muted small mb-0">Kelola dan pantau semua transaksi penjualan</p>
     </div>
-    <a href="{{ route('admin.transactions.create') }}" class="btn btn-info rounded-pill px-4 shadow-sm fw-bold text-white">
+    <a href="{{ route('admin.transactions.create') }}" class="btn btn-info rounded-pill px-4 shadow-sm fw-bold text-white w-100 w-sm-auto">
         <i class="fa fa-plus me-2"></i> Transaksi Baru
     </a>
 </div>
 
 <div class="card overflow-hidden">
-    <div class="card-header bg-transparent border-0 pt-4 px-4">
+    <div class="card-header bg-transparent border-0 pt-4 px-3 px-md-4">
         <h5 class="fw-bold mb-0">Semua Transaksi</h5>
     </div>
     <div class="card-body p-0">
