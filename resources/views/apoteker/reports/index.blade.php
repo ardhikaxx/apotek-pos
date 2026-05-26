@@ -3,21 +3,19 @@
 @section('page-title', 'Laporan Penjualan')
 
 @section('content')
-<div class="row mb-4">
-    <div class="col-12 d-flex justify-content-between align-items-center">
-        <div>
-            <h4 class="fw-bold mb-1">Aktivitas Penjualan Hari Ini</h4>
-            <p class="text-muted small mb-0">Laporan transaksi yang Anda proses pada tanggal {{ now()->translatedFormat('d F Y') }}</p>
-        </div>
-        <a href="{{ route('apoteker.reports.pdf') }}" class="btn btn-outline-danger rounded-pill px-4 shadow-sm" target="_blank">
-            <i class="fa fa-file-pdf me-2"></i>Export PDF
-        </a>
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+    <div>
+        <h4 class="fw-bold mb-1">Aktivitas Penjualan Hari Ini</h4>
+        <p class="text-muted small mb-0">Laporan transaksi Anda pada {{ now()->translatedFormat('d F Y') }}</p>
     </div>
+    <a href="{{ route('apoteker.reports.pdf') }}" class="btn btn-outline-danger rounded-pill px-4 shadow-sm" target="_blank">
+        <i class="fa fa-file-pdf me-2"></i>Export PDF
+    </a>
 </div>
 
 <div class="row mb-4">
-    <div class="col-md-12">
-        <div class="p-4 bg-primary bg-opacity-10 rounded-4 border border-primary border-opacity-10 d-flex align-items-center justify-content-between">
+    <div class="col-12">
+        <div class="p-3 p-md-4 bg-primary bg-opacity-10 rounded-4 border border-primary border-opacity-10 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
             <div class="d-flex align-items-center">
                 <div class="bg-primary text-white p-3 rounded-circle me-3 shadow-sm">
                     <i class="fa fa-wallet fs-4"></i>
@@ -27,7 +25,7 @@
                     <h2 class="fw-bold mb-0 text-dark">Rp {{ number_format($total, 0, ',', '.') }}</h2>
                 </div>
             </div>
-            <div class="text-end d-none d-md-block">
+            <div class="text-md-end">
                 <span class="badge bg-white text-primary rounded-pill px-3 py-2 shadow-sm fw-bold">
                     {{ count($transactions) }} Transaksi Berhasil
                 </span>
