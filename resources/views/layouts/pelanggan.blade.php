@@ -26,10 +26,20 @@
         .hero-section { 
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
             color: white; 
-            padding: 80px 0; 
-            margin-bottom: 50px;
+            padding: 60px 0; 
+            margin-bottom: 30px;
             position: relative;
             overflow: hidden;
+        }
+        @media (min-width: 992px) {
+            .hero-section {
+                padding: 80px 0;
+                margin-bottom: 50px;
+            }
+        }
+        .hero-section h1 { font-size: 2.5rem; }
+        @media (min-width: 992px) {
+            .hero-section h1 { font-size: 3.5rem; }
         }
         .hero-section::after {
             content: '';
