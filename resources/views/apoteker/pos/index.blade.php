@@ -34,22 +34,22 @@
 @endpush
 
 @section('content')
-<div class="row mb-4">
-    <div class="col-12">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+    <div>
         <h4 class="fw-bold mb-1">Point of Sale</h4>
-        <p class="text-muted small">Kelola transaksi penjualan obat dengan cepat dan mudah</p>
+        <p class="text-muted small mb-0">Kelola transaksi penjualan obat dengan cepat dan mudah</p>
     </div>
 </div>
 
-<div class="row g-4 pos-container">
+<div class="row g-3 g-md-4 pos-container">
     <!-- Pencarian Produk -->
     <div class="col-xl-8 col-lg-7">
         <div class="card border-0 shadow-sm product-search-card">
-            <div class="card-header bg-transparent border-0 pt-4 px-4 d-flex align-items-center justify-content-between">
+            <div class="card-header bg-transparent border-0 pt-4 px-3 px-md-4 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
                 <h5 class="fw-bold mb-0"><i class="fa fa-magnifying-glass me-2 text-primary"></i>Cari Obat / Produk</h5>
                 <span class="badge bg-light text-muted fw-normal rounded-pill px-3">Scan Barcode atau Ketik Nama</span>
             </div>
-            <div class="card-body px-4 pb-4">
+            <div class="card-body p-3 p-md-4">
                 <div class="input-group input-group-lg mb-4 shadow-sm rounded-pill overflow-hidden border">
                     <span class="input-group-text bg-white border-0 ps-4"><i class="fa fa-search text-muted"></i></span>
                     <input type="text" id="search-input" class="form-control border-0 px-3" placeholder="Ketik nama obat atau kategori..." autocomplete="off">
