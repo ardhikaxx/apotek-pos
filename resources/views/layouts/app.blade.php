@@ -253,14 +253,19 @@
 
     <div class="main-content">
         <div class="topbar d-flex align-items-center justify-content-between">
-            <div>
-                <nav aria-label="breadcrumb" class="mb-1 d-none d-md-block">
-                    <ol class="breadcrumb mb-0" style="font-size: 0.75rem;">
-                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Aplikasi</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">@yield('page-title', 'Dashboard')</li>
-                    </ol>
-                </nav>
-                <h5 class="mb-0 fw-bold">@yield('page-title', 'Dashboard')</h5>
+            <div class="d-flex align-items-center">
+                <button type="button" class="btn text-dark d-lg-none me-3 p-0 border-0" id="sidebarToggle">
+                    <i class="fa fa-bars fs-4"></i>
+                </button>
+                <div>
+                    <nav aria-label="breadcrumb" class="mb-1 d-none d-md-block">
+                        <ol class="breadcrumb mb-0" style="font-size: 0.75rem;">
+                            <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Aplikasi</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">@yield('page-title', 'Dashboard')</li>
+                        </ol>
+                    </nav>
+                    <h5 class="mb-0 fw-bold">@yield('page-title', 'Dashboard')</h5>
+                </div>
             </div>
             <div class="d-flex align-items-center">
                 <div class="text-end d-none d-md-block me-3">
@@ -344,5 +349,8 @@
         });
     </script>
     @stack('scripts')
+</body>
+</html>
+'scripts')
 </body>
 </html>
