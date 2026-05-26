@@ -3,16 +3,14 @@
 @section('page-title', 'Detail Pembelian')
 
 @section('content')
-<div class="row mb-4">
-    <div class="col-12 d-flex justify-content-between align-items-center">
-        <div>
-            <h4 class="fw-bold mb-1">Invoice Pembelian #PUR-{{ str_pad($purchase->id, 5, '0', STR_PAD_LEFT) }}</h4>
-            <p class="text-muted small mb-0">Rincian detail transaksi stok masuk dari supplier</p>
-        </div>
-        <a href="{{ route('admin.purchases.index') }}" class="btn btn-light rounded-pill px-4 shadow-sm">
-            <i class="fa fa-arrow-left me-2"></i>Kembali
-        </a>
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+    <div>
+        <h4 class="fw-bold mb-1">Invoice Pembelian #PUR-{{ str_pad($purchase->id, 5, '0', STR_PAD_LEFT) }}</h4>
+        <p class="text-muted small mb-0">Rincian detail transaksi stok masuk dari supplier</p>
     </div>
+    <a href="{{ route('admin.purchases.index') }}" class="btn btn-light rounded-pill px-4 shadow-sm">
+        <i class="fa fa-arrow-left me-2"></i>Kembali
+    </a>
 </div>
 
 <div class="row g-4">
@@ -21,7 +19,7 @@
             <div class="card-header bg-transparent border-0 pt-4 px-4">
                 <h6 class="mb-0 fw-bold text-dark"><i class="fa fa-receipt me-2 text-primary"></i>Ringkasan Transaksi</h6>
             </div>
-            <div class="card-body px-4 pb-4">
+            <div class="card-body p-3 p-md-4">
                 <div class="p-3 bg-light rounded-4 mb-4 text-center">
                     <small class="text-muted d-block text-uppercase fw-bold mb-1" style="font-size: 0.65rem; letter-spacing: 0.05em;">Total Pembelian</small>
                     <h3 class="fw-bold text-primary mb-0">Rp {{ number_format($purchase->total, 0, ',', '.') }}</h3>
