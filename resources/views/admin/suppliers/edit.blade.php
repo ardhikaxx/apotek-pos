@@ -4,33 +4,43 @@
 
 @section('content')
 <div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card border-0 shadow-sm">
-            <div class="card-header bg-white py-3">
-                <h6 class="mb-0 fw-bold text-warning"><i class="fa fa-edit me-2"></i>Edit Supplier</h6>
+    <div class="col-md-8 col-lg-6">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="fw-bold mb-1">Edit Supplier</h4>
+                <p class="text-muted small mb-0">Perbarui data pemasok dalam sistem</p>
             </div>
-            <div class="card-body">
+            <a href="{{ route('admin.suppliers.index') }}" class="btn btn-light rounded-pill px-4 shadow-sm fw-bold">
+                <i class="fa fa-arrow-left me-2"></i> Kembali
+            </a>
+        </div>
+
+        <div class="card border-0 shadow-sm overflow-hidden">
+            <div class="card-header bg-transparent border-0 pt-4 px-4">
+                <h5 class="fw-bold mb-0">Form Edit Supplier</h5>
+            </div>
+            <div class="card-body p-4">
                 <form action="{{ route('admin.suppliers.update', $supplier) }}" method="POST">
                     @csrf @method('PUT')
                     <div class="mb-3">
-                        <label class="form-label">Nama Supplier</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $supplier->name) }}" required>
+                        <label class="form-label fw-bold text-secondary small text-uppercase">Nama Supplier</label>
+                        <input type="text" name="name" class="form-control form-control-lg bg-light border-0 @error('name') is-invalid @enderror" value="{{ old('name', $supplier->name) }}" placeholder="Masukkan nama supplier" required>
                         @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Telepon</label>
-                        <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone', $supplier->phone) }}">
+                        <label class="form-label fw-bold text-secondary small text-uppercase">Telepon</label>
+                        <input type="text" name="phone" class="form-control form-control-lg bg-light border-0 @error('phone') is-invalid @enderror" value="{{ old('phone', $supplier->phone) }}" placeholder="Masukkan nomor telepon">
                         @error('phone') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Alamat</label>
-                        <textarea name="address" class="form-control @error('address') is-invalid @enderror" rows="3">{{ old('address', $supplier->address) }}</textarea>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-secondary small text-uppercase">Alamat</label>
+                        <textarea name="address" class="form-control form-control-lg bg-light border-0 @error('address') is-invalid @enderror" rows="3" placeholder="Masukkan alamat lengkap">{{ old('address', $supplier->address) }}</textarea>
                         @error('address') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <a href="{{ route('admin.suppliers.index') }}" class="btn btn-light">Batal</a>
-                        <button type="submit" class="btn btn-warning">Perbarui Supplier</button>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-warning btn-lg rounded-pill shadow-sm fw-bold text-dark">
+                            <i class="fa fa-save me-2"></i> Perbarui Supplier
+                        </button>
                     </div>
                 </form>
             </div>
