@@ -5,16 +5,16 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-10 col-lg-8">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
             <div>
                 <h4 class="fw-bold mb-1">Detail Transaksi</h4>
                 <p class="text-muted small mb-0">Informasi lengkap transaksi penjualan</p>
             </div>
             <div class="d-flex gap-2">
-                <a href="{{ route('admin.transactions.index') }}" class="btn btn-light rounded-pill px-4 shadow-sm fw-bold">
+                <a href="{{ route('admin.transactions.index') }}" class="btn btn-light rounded-pill px-4 shadow-sm fw-bold flex-grow-1 flex-sm-grow-0">
                     <i class="fa fa-arrow-left me-2"></i> Kembali
                 </a>
-                <a href="{{ route('admin.transactions.pdf', $transaction) }}" class="btn btn-dark rounded-pill px-4 shadow-sm fw-bold" target="_blank">
+                <a href="{{ route('admin.transactions.pdf', $transaction) }}" class="btn btn-dark rounded-pill px-4 shadow-sm fw-bold flex-grow-1 flex-sm-grow-0" target="_blank">
                     <i class="fa fa-print me-2"></i> Cetak Invoice
                 </a>
             </div>
@@ -27,7 +27,7 @@
                     <span class="badge bg-primary rounded-pill px-3">{{ $transaction->transaction_date->format('d M Y H:i') }}</span>
                 </div>
             </div>
-            <div class="card-body p-4">
+            <div class="card-body p-3 p-md-4">
                 <div class="row mb-4">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label class="form-label fw-bold text-secondary small text-uppercase mb-1">Kasir</label>
