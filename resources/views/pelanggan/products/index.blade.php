@@ -78,7 +78,7 @@
                 <div class="bg-light rounded-4 py-5 mb-4 position-relative overflow-hidden product-image-container">
                     <i class="fa fa-pills fa-4x text-info opacity-25"></i>
                     @if($product->stock <= 5 && $product->stock > 0)
-                        <span class="position-absolute top-0 end-0 m-3 badge bg-warning text-dark rounded-pill fw-bold" style="font-size: 0.65rem;">Hampir Habis</span>
+                        <span class="position-absolute top-0 inset-e-0 m-3 badge bg-warning text-dark rounded-pill fw-bold" style="font-size: 0.65rem;">Hampir Habis</span>
                     @endif
                     <div class="hover-overlay">
                         <a href="{{ route('pelanggan.products.show', $product) }}" class="btn btn-white btn-sm rounded-pill px-3 fw-bold">Detail Cepat</a>
