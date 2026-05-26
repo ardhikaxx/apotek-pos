@@ -3,9 +3,9 @@
 @section('page-title', 'Detail Obat')
 
 @section('content')
-<div class="row justify-content-center mb-5">
+<div class="row justify-content-center mb-5 py-1">
     <div class="col-lg-10">
-        <nav aria-label="breadcrumb" class="mb-4">
+        <nav aria-label="breadcrumb" class="mb-4 mt-5">
             <ol class="breadcrumb small">
                 <li class="breadcrumb-item"><a href="{{ route('pelanggan.products.index') }}" class="text-decoration-none text-muted">Katalog</a></li>
                 <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">{{ $product->name }}</li>
@@ -58,9 +58,6 @@
                         </div>
 
                         <div class="d-grid gap-3">
-                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20obat%20{{ $product->name }}" target="_blank" class="btn btn-success rounded-pill py-3 fw-bold shadow-sm">
-                                <i class="fab fa-whatsapp me-2 fs-5"></i>PESAN VIA WHATSAPP
-                            </a>
                             <a href="{{ route('pelanggan.products.index') }}" class="btn btn-light rounded-pill py-3 fw-bold border">
                                 <i class="fa fa-arrow-left me-2"></i>KEMBALI KE KATALOG
                             </a>
@@ -74,7 +71,7 @@
             <div class="col-md-4">
                 <div class="d-flex gap-3 align-items-center">
                     <div class="bg-white shadow-sm p-3 rounded-4 text-info">
-                        <i class="fa fa-box-check fs-4"></i>
+                        <i class="fa fa-user-shield fs-4"></i>
                     </div>
                     <div>
                         <h6 class="fw-bold mb-0">Privasi Terjamin</h6>
@@ -85,7 +82,7 @@
             <div class="col-md-4">
                 <div class="d-flex gap-3 align-items-center">
                     <div class="bg-white shadow-sm p-3 rounded-4 text-success">
-                        <i class="fa fa-badge-check fs-4"></i>
+                        <i class="fa fa-certificate fs-4"></i>
                     </div>
                     <div>
                         <h6 class="fw-bold mb-0">Original 100%</h6>
@@ -116,12 +113,19 @@
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-10px); }
     }
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+    }
     .breadcrumb-item + .breadcrumb-item::before {
         content: "\f105";
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
         font-size: 0.7rem;
         color: #cbd5e1;
+        display: inline-block;
+        vertical-align: middle;
+        padding-top: 2px; /* Fine-tuned alignment */
     }
 </style>
 @endsection
