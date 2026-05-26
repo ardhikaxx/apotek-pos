@@ -65,7 +65,46 @@
             margin-left: 260px; 
             padding: 2rem; 
             transition: all 0.3s;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+        
+        @media (max-width: 991.98px) {
+            .sidebar {
+                transform: translateX(-100%);
+                z-index: 1050;
+            }
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(15, 23, 42, 0.5);
+                backdrop-filter: blur(4px);
+                z-index: 1040;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .sidebar-overlay.show {
+                display: block;
+                opacity: 1;
+            }
+            .topbar {
+                margin: -1rem -1rem 1rem;
+                padding: 1rem;
+            }
+        }
+
         .topbar { 
             background: rgba(255,255,255,0.8); 
             backdrop-filter: blur(10px);
