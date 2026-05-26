@@ -22,6 +22,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 250,
                 'stock' => 500,
                 'is_active' => true,
+                'expiry_date' => '2027-05-20',
             ],
             [
                 'category_name' => 'Analgesik & Antipiretik',
@@ -31,6 +32,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 350,
                 'stock' => 300,
                 'is_active' => true,
+                'expiry_date' => '2026-12-15',
             ],
             [
                 'category_name' => 'Analgesik & Antipiretik',
@@ -40,6 +42,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 300,
                 'stock' => 250,
                 'is_active' => true,
+                'expiry_date' => '2026-10-10',
             ],
             [
                 'category_name' => 'Analgesik & Antipiretik',
@@ -49,6 +52,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 230,
                 'stock' => 600,
                 'is_active' => true,
+                'expiry_date' => '2027-08-25',
             ],
             [
                 'category_name' => 'Analgesik & Antipiretik',
@@ -58,6 +62,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 450,
                 'stock' => 150,
                 'is_active' => true,
+                'expiry_date' => '2026-09-30',
             ],
             [
                 'category_name' => 'Analgesik & Antipiretik',
@@ -67,6 +72,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 380,
                 'stock' => 200,
                 'is_active' => true,
+                'expiry_date' => '2026-11-12',
             ],
 
             // Antibiotik
@@ -78,6 +84,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 320,
                 'stock' => 200,
                 'is_active' => true,
+                'expiry_date' => '2026-06-15',
             ],
             [
                 'category_name' => 'Antibiotik',
@@ -87,6 +94,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 550,
                 'stock' => 120,
                 'is_active' => true,
+                'expiry_date' => '2026-08-20',
             ],
             [
                 'category_name' => 'Antibiotik',
@@ -96,6 +104,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 220,
                 'stock' => 180,
                 'is_active' => true,
+                'expiry_date' => '2026-07-10',
             ],
             [
                 'category_name' => 'Antibiotik',
@@ -105,6 +114,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 320,
                 'stock' => 150,
                 'is_active' => true,
+                'expiry_date' => '2026-09-05',
             ],
             [
                 'category_name' => 'Antibiotik',
@@ -114,6 +124,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 1800,
                 'stock' => 80,
                 'is_active' => true,
+                'expiry_date' => '2026-05-15',
             ],
             [
                 'category_name' => 'Antibiotik',
@@ -123,6 +134,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 750,
                 'stock' => 100,
                 'is_active' => true,
+                'expiry_date' => '2026-10-30',
             ],
 
             // Antivirus
@@ -134,6 +146,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 400,
                 'stock' => 100,
                 'is_active' => true,
+                'expiry_date' => '2027-01-20',
             ],
             [
                 'category_name' => 'Antivirus',
@@ -143,6 +156,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 1350,
                 'stock' => 50,
                 'is_active' => true,
+                'expiry_date' => '2026-12-01',
             ],
 
             // Obat Batuk & Pilek
@@ -154,6 +168,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 18000,
                 'stock' => 30,
                 'is_active' => true,
+                'expiry_date' => '2027-03-15',
             ],
             [
                 'category_name' => 'Obat Batuk & Pilek',
@@ -163,6 +178,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 15500,
                 'stock' => 45,
                 'is_active' => true,
+                'expiry_date' => '2027-02-28',
             ],
             [
                 'category_name' => 'Obat Batuk & Pilek',
@@ -172,6 +188,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 280,
                 'stock' => 300,
                 'is_active' => true,
+                'expiry_date' => '2027-06-10',
             ],
             [
                 'category_name' => 'Obat Batuk & Pilek',
@@ -181,6 +198,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 22500,
                 'stock' => 25,
                 'is_active' => true,
+                'expiry_date' => '2026-11-20',
             ],
             [
                 'category_name' => 'Obat Batuk & Pilek',
@@ -190,6 +208,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 380,
                 'stock' => 250,
                 'is_active' => true,
+                'expiry_date' => '2027-01-05',
             ],
             [
                 'category_name' => 'Obat Batuk & Pilek',
@@ -199,6 +218,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 350,
                 'stock' => 280,
                 'is_active' => true,
+                'expiry_date' => '2026-12-30',
             ],
 
             // Obat Diabetes
@@ -210,6 +230,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 280,
                 'stock' => 400,
                 'is_active' => true,
+                'expiry_date' => '2027-08-10',
             ],
             [
                 'category_name' => 'Obat Diabetes',
@@ -219,6 +240,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 550,
                 'stock' => 200,
                 'is_active' => true,
+                'expiry_date' => '2027-09-15',
             ],
             [
                 'category_name' => 'Obat Diabetes',
@@ -228,6 +250,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 200,
                 'stock' => 350,
                 'is_active' => true,
+                'expiry_date' => '2027-04-20',
             ],
             [
                 'category_name' => 'Obat Diabetes',
@@ -237,6 +260,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 400,
                 'stock' => 180,
                 'is_active' => true,
+                'expiry_date' => '2026-10-15',
             ],
 
             // Obat Hipertensi
@@ -248,6 +272,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 180,
                 'stock' => 450,
                 'is_active' => true,
+                'expiry_date' => '2027-11-12',
             ],
             [
                 'category_name' => 'Obat Hipertensi',
@@ -257,6 +282,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 300,
                 'stock' => 300,
                 'is_active' => true,
+                'expiry_date' => '2027-12-05',
             ],
             [
                 'category_name' => 'Obat Hipertensi',
@@ -266,6 +292,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 420,
                 'stock' => 220,
                 'is_active' => true,
+                'expiry_date' => '2027-05-30',
             ],
             [
                 'category_name' => 'Obat Hipertensi',
@@ -275,6 +302,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 300,
                 'stock' => 200,
                 'is_active' => true,
+                'expiry_date' => '2026-08-10',
             ],
             [
                 'category_name' => 'Obat Hipertensi',
@@ -284,6 +312,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 550,
                 'stock' => 150,
                 'is_active' => true,
+                'expiry_date' => '2026-09-25',
             ],
 
             // Suplemen & Vitamin
@@ -295,6 +324,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 220,
                 'stock' => 500,
                 'is_active' => true,
+                'expiry_date' => '2027-10-15',
             ],
             [
                 'category_name' => 'Suplemen & Vitamin',
@@ -304,6 +334,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 600,
                 'stock' => 200,
                 'is_active' => true,
+                'expiry_date' => '2026-12-20',
             ],
             [
                 'category_name' => 'Suplemen & Vitamin',
@@ -313,6 +344,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 350,
                 'stock' => 350,
                 'is_active' => true,
+                'expiry_date' => '2027-02-10',
             ],
             [
                 'category_name' => 'Suplemen & Vitamin',
@@ -322,6 +354,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 300,
                 'stock' => 300,
                 'is_active' => true,
+                'expiry_date' => '2027-04-15',
             ],
             [
                 'category_name' => 'Suplemen & Vitamin',
@@ -331,6 +364,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 350,
                 'stock' => 280,
                 'is_active' => true,
+                'expiry_date' => '2026-11-30',
             ],
             [
                 'category_name' => 'Suplemen & Vitamin',
@@ -340,6 +374,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 320,
                 'stock' => 220,
                 'is_active' => true,
+                'expiry_date' => '2027-06-25',
             ],
             [
                 'category_name' => 'Suplemen & Vitamin',
@@ -349,6 +384,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 420,
                 'stock' => 200,
                 'is_active' => true,
+                'expiry_date' => '2027-01-20',
             ],
 
             // Obat Lambung & Antacida
@@ -360,6 +396,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 380,
                 'stock' => 250,
                 'is_active' => true,
+                'expiry_date' => '2027-05-15',
             ],
             [
                 'category_name' => 'Obat Lambung & Antacida',
@@ -369,6 +406,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 26500,
                 'stock' => 40,
                 'is_active' => true,
+                'expiry_date' => '2026-08-30',
             ],
             [
                 'category_name' => 'Obat Lambung & Antacida',
@@ -378,6 +416,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 580,
                 'stock' => 120,
                 'is_active' => true,
+                'expiry_date' => '2026-10-10',
             ],
             [
                 'category_name' => 'Obat Lambung & Antacida',
@@ -387,6 +426,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 680,
                 'stock' => 100,
                 'is_active' => true,
+                'expiry_date' => '2027-03-20',
             ],
             [
                 'category_name' => 'Obat Lambung & Antacida',
@@ -396,6 +436,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 620,
                 'stock' => 90,
                 'is_active' => true,
+                'expiry_date' => '2027-01-15',
             ],
             [
                 'category_name' => 'Obat Lambung & Antacida',
@@ -405,6 +446,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 250,
                 'stock' => 300,
                 'is_active' => true,
+                'expiry_date' => '2027-04-10',
             ],
 
             // Obat Kulit & Kelamin
@@ -416,6 +458,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 12500,
                 'stock' => 50,
                 'is_active' => true,
+                'expiry_date' => '2027-11-20',
             ],
             [
                 'category_name' => 'Obat Kulit & Kelamin',
@@ -425,6 +468,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 18000,
                 'stock' => 40,
                 'is_active' => true,
+                'expiry_date' => '2027-12-15',
             ],
             [
                 'category_name' => 'Obat Kulit & Kelamin',
@@ -434,6 +478,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 11000,
                 'stock' => 60,
                 'is_active' => true,
+                'expiry_date' => '2026-09-05',
             ],
             [
                 'category_name' => 'Obat Kulit & Kelamin',
@@ -443,6 +488,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 22500,
                 'stock' => 35,
                 'is_active' => true,
+                'expiry_date' => '2027-02-10',
             ],
             [
                 'category_name' => 'Obat Kulit & Kelamin',
@@ -452,6 +498,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 480,
                 'stock' => 150,
                 'is_active' => true,
+                'expiry_date' => '2026-12-30',
             ],
 
             // Obat Mata
@@ -463,6 +510,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 18000,
                 'stock' => 25,
                 'is_active' => true,
+                'expiry_date' => '2027-06-20',
             ],
             [
                 'category_name' => 'Obat Mata',
@@ -472,6 +520,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 22500,
                 'stock' => 30,
                 'is_active' => true,
+                'expiry_date' => '2027-08-15',
             ],
             [
                 'category_name' => 'Obat Mata',
@@ -481,6 +530,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 68000,
                 'stock' => 15,
                 'is_active' => true,
+                'expiry_date' => '2027-01-30',
             ],
             [
                 'category_name' => 'Obat Mata',
@@ -490,6 +540,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 12500,
                 'stock' => 40,
                 'is_active' => true,
+                'expiry_date' => '2026-11-10',
             ],
             [
                 'category_name' => 'Obat Mata',
@@ -499,6 +550,7 @@ class ProductSeeder extends Seeder
                 'selling_price' => 15500,
                 'stock' => 45,
                 'is_active' => true,
+                'expiry_date' => '2027-03-05',
             ],
         ];
 
@@ -513,6 +565,7 @@ class ProductSeeder extends Seeder
                     'selling_price' => $productData['selling_price'],
                     'stock' => $productData['stock'],
                     'is_active' => $productData['is_active'],
+                    'expiry_date' => $productData['expiry_date'],
                 ]);
             }
         }

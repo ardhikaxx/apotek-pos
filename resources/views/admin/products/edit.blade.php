@@ -47,6 +47,10 @@
                     <input type="number" name="stock" class="form-control" value="{{ old('stock', $product->stock) }}" min="0" required>
                 </div>
                 <div class="col-md-6">
+                    <label class="form-label">Tanggal Kadaluarsa</label>
+                    <input type="date" name="expiry_date" class="form-control" value="{{ old('expiry_date', $product->expiry_date) }}">
+                </div>
+                <div class="col-md-6">
                     <label class="form-label">Status</label>
                     <select name="is_active" class="form-select">
                         <option value="1" {{ $product->is_active ? 'selected' : '' }}>Aktif</option>

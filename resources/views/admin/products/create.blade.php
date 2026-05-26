@@ -47,6 +47,10 @@
                     <label class="form-label">Stok Awal</label>
                     <input type="number" name="stock" class="form-control" value="{{ old('stock', 0) }}" min="0" required>
                 </div>
+                <div class="col-md-6">
+                    <label class="form-label">Tanggal Kadaluarsa</label>
+                    <input type="date" name="expiry_date" class="form-control" value="{{ old('expiry_date') }}">
+                </div>
             </div>
             <div class="d-flex gap-2 mt-3">
                 <button type="submit" class="btn btn-info text-white"><i class="fa fa-save me-1"></i> Simpan</button>
