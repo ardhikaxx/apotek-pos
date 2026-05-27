@@ -11,6 +11,12 @@
         <p class="text-muted small">Silakan login untuk mengakses layanan Apotek POS</p>
     </div>
 
+    @if(session('success'))
+        <div class="alert alert-success border-0 small py-2 mb-4">
+            <i class="fa fa-check-circle me-1"></i>{{ session('success') }}
+        </div>
+    @endif
+
     @if($errors->any())
         <div class="alert alert-danger border-0 small py-2 mb-4">
             <i class="fa fa-exclamation-circle me-1"></i>{{ $errors->first() }}
@@ -43,6 +49,7 @@
                 <input type="checkbox" name="remember" class="form-check-input" id="remember">
                 <label class="form-check-label small text-muted" for="remember">Ingat saya</label>
             </div>
+            <a href="{{ route('password.request') }}" class="small text-info text-decoration-none fw-bold">Lupa password?</a>
         </div>
 
         <button type="submit" class="btn btn-info w-100 text-white fw-bold shadow-sm mb-4">
