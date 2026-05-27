@@ -5,11 +5,12 @@
 @push('styles')
 <style>
     .pos-container { min-height: calc(100vh - 180px); }
-    .product-search-card { height: 100%; min-height: 400px; }
+    .product-search-card { height: 100%; }
     .search-result-item { 
         border: 1px solid #f1f5f9;
         transition: all 0.2s;
         border-radius: 12px;
+        cursor: pointer;
     }
     .search-result-item:hover { 
         background-color: #f8fafc;
@@ -20,26 +21,9 @@
     .cart-card { 
         position: sticky;
         top: 90px;
-        height: calc(100vh - 120px);
-        display: flex;
-        flex-direction: column;
-    }
-    @media (max-width: 991.98px) {
-        .cart-card {
-            position: static;
-            height: auto;
-            min-height: 500px;
-            margin-top: 1rem;
-        }
-        .pos-container {
-            flex-direction: column;
-        }
     }
     .cart-item-qty { width: 60px; text-align: center; }
     #search-results { max-height: 550px; overflow-y: auto; scrollbar-width: thin; }
-    @media (max-width: 991.98px) {
-        #search-results { max-height: 400px; }
-    }
     .total-banner {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         color: #fff;
@@ -50,15 +34,22 @@
 @endpush
 
 @section('content')
-<div class="row g-4 pos-container">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+    <div>
+        <h4 class="fw-bold mb-1">Point of Sale</h4>
+        <p class="text-muted small mb-0">Kelola transaksi penjualan obat dengan cepat dan mudah</p>
+    </div>
+</div>
+
+<div class="row g-3 g-md-4 pos-container">
     <!-- Pencarian Produk -->
     <div class="col-xl-8 col-lg-7">
         <div class="card border-0 shadow-sm product-search-card">
-            <div class="card-header bg-transparent border-0 pt-4 px-4 d-flex align-items-center justify-content-between">
+            <div class="card-header bg-transparent border-0 pt-4 px-3 px-md-4 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
                 <h5 class="fw-bold mb-0"><i class="fa fa-magnifying-glass me-2 text-primary"></i>Cari Obat / Produk</h5>
                 <span class="badge bg-light text-muted fw-normal rounded-pill px-3">Scan Barcode atau Ketik Nama</span>
             </div>
-            <div class="card-body px-4 pb-4">
+            <div class="card-body p-3 p-md-4">
                 <div class="input-group input-group-lg mb-4 shadow-sm rounded-pill overflow-hidden border">
                     <span class="input-group-text bg-white border-0 ps-4"><i class="fa fa-search text-muted"></i></span>
                     <input type="text" id="search-input" class="form-control border-0 px-3" placeholder="Ketik nama obat atau kategori..." autocomplete="off">
@@ -144,7 +135,7 @@
                     <h5 class="text-success fw-bold mb-0" id="change-display">Rp 0</h5>
                 </div>
 
-                <button id="btn-checkout" class="btn btn-primary w-100 py-3 rounded-4 fw-bold shadow-lg" disabled>
+                <button id="btn-checkout" class="btn btn-info w-100 py-3 rounded-pill fw-bold shadow-sm" disabled>
                     PROSES PEMBAYARAN <i class="fa fa-arrow-right ms-2"></i>
                 </button>
             </div>
@@ -189,9 +180,18 @@ function fetchProducts(q = '') {
     el.innerHTML = '<div class="col-12 text-center py-5"><div class="spinner-border text-primary"></div></div>';
     
     fetch(`{{ route('admin.transactions.search') }}?q=${encodeURIComponent(q)}`, {
-        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        headers: { 
+            'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json'
+        }
     })
-    .then(r => r.json())
+    .then(async r => {
+        if (!r.ok) {
+            console.error("HTTP Error", r.status, await r.text());
+            throw new Error("HTTP Status " + r.status);
+        }
+        return r.json();
+    })
     .then(data => {
         if (!data.length) { 
             el.innerHTML = '<div class="col-12 text-center py-5 opacity-50"><i class="fa fa-search fa-3x mb-3"></i><p>Produk tidak ditemukan.</p></div>'; 

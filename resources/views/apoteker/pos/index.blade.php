@@ -180,9 +180,18 @@ function fetchProducts(q = '') {
     el.innerHTML = '<div class="col-12 text-center py-5"><div class="spinner-border text-primary"></div></div>';
     
     fetch(`{{ route('apoteker.pos.search') }}?q=${encodeURIComponent(q)}`, {
-        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        headers: { 
+            'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json'
+        }
     })
-    .then(r => r.json())
+    .then(async r => {
+        if (!r.ok) {
+            console.error("HTTP Error", r.status, await r.text());
+            throw new Error("HTTP Status " + r.status);
+        }
+        return r.json();
+    })
     .then(data => {
         if (!data.length) { 
             el.innerHTML = '<div class="col-12 text-center py-5 opacity-50"><i class="fa fa-search fa-3x mb-3"></i><p>Produk tidak ditemukan.</p></div>'; 
