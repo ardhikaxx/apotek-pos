@@ -8,9 +8,11 @@
         <h4 class="fw-bold mb-1">Obat Kadaluarsa</h4>
         <p class="text-muted small mb-0">Daftar produk yang telah melewati masa berlaku</p>
     </div>
-    <a href="{{ route('apoteker.products.index') }}" class="btn btn-light rounded-pill px-4 shadow-sm fw-bold">
-        <i class="fa fa-arrow-left me-2"></i> Kembali
-    </a>
+    <div class="d-flex flex-wrap gap-2 mt-3 mt-sm-0">
+        <a href="{{ route('apoteker.products.index') }}" class="btn btn-light rounded-pill px-4 py-2 shadow-sm fw-bold text-nowrap d-flex align-items-center">
+            <i class="fa fa-arrow-left me-2"></i> Kembali
+        </a>
+    </div>
 </div>
 
 <div class="alert alert-danger border-0 shadow-sm mb-4 rounded-4 d-flex align-items-center p-3">
