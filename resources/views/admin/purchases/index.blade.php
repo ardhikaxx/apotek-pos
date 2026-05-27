@@ -33,7 +33,7 @@
                 <tbody>
                     @forelse($purchases as $p)
                     <tr>
-                        <td class="px-4">{{ $loop->iteration }}</td>
+                        <td class="px-4">{{ ($purchases->currentPage() - 1) * $purchases->perPage() + $loop->iteration }}</td>
                         <td>
                             <div class="fw-bold text-dark">{{ \Carbon\Carbon::parse($p->purchase_date)->format('d M Y') }}</div>
                         </td>
@@ -67,6 +67,11 @@
             </table>
         </div>
     </div>
+    @if($purchases->hasPages())
+    <div class="card-footer bg-transparent border-0 px-4 pt-3 pb-2">
+        {{ $purchases->links('pagination::bootstrap-5') }}
+    </div>
+    @endif
 </div>
 
 <style>
