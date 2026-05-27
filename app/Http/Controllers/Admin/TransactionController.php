@@ -102,7 +102,7 @@ class TransactionController extends Controller
             ->where('stock', '>', 0)
             ->where('name', 'like', '%' . $request->q . '%')
             ->with('category')
-            ->get(['id','name','selling_price','stock','unit']);
+            ->get(['id','name','selling_price','stock','unit','category_id']);
 
         return response()->json($products);
     }
