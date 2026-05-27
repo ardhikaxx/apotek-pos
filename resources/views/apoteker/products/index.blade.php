@@ -8,12 +8,12 @@
         <h4 class="fw-bold mb-1">Manajemen Inventori</h4>
         <p class="text-muted small mb-0">Kelola stok dan informasi obat di apotek Anda</p>
     </div>
-    <div class="d-flex flex-wrap gap-2">
-        <a href="{{ route('apoteker.products.expired') }}" class="btn btn-warning rounded-pill px-3 shadow-sm fw-bold">
-            <i class="fa fa-hourglass-half me-1"></i> Kadaluarsa
+    <div class="d-flex flex-wrap gap-2 mt-3 mt-sm-0">
+        <a href="{{ route('apoteker.products.expired') }}" class="btn btn-warning text-dark rounded-pill px-4 py-2 shadow-sm fw-bold text-nowrap d-flex align-items-center">
+            <i class="fa fa-hourglass-half me-2"></i> Kadaluarsa
         </a>
-        <a href="{{ route('apoteker.products.create') }}" class="btn btn-info text-white rounded-pill px-4 shadow-sm fw-bold">
-            <i class="fa fa-plus me-1"></i> Tambah
+        <a href="{{ route('apoteker.products.create') }}" class="btn btn-info text-white rounded-pill px-4 py-2 shadow-sm fw-bold text-nowrap d-flex align-items-center">
+            <i class="fa fa-plus me-2"></i> Tambah
         </a>
     </div>
 </div>
