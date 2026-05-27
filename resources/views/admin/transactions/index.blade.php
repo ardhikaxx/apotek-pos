@@ -8,9 +8,11 @@
         <h4 class="fw-bold mb-1">Riwayat Transaksi</h4>
         <p class="text-muted small mb-0">Kelola dan pantau semua transaksi penjualan</p>
     </div>
-    <a href="{{ route('admin.transactions.create') }}" class="btn btn-info rounded-pill px-4 shadow-sm fw-bold text-white w-100 w-sm-auto">
-        <i class="fa fa-plus me-2"></i> Transaksi Baru
-    </a>
+    <div class="d-flex flex-wrap gap-2 mt-3 mt-sm-0">
+        <a href="{{ route('admin.transactions.create') }}" class="btn btn-info text-white rounded-pill px-4 py-2 shadow-sm fw-bold text-nowrap d-flex align-items-center">
+            <i class="fa fa-plus me-2"></i> Transaksi Baru
+        </a>
+    </div>
 </div>
 
 <div class="card overflow-hidden">
