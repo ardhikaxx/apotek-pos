@@ -35,7 +35,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
     Route::get('transactions/search-product', [Admin\TransactionController::class, 'searchProduct'])->name('transactions.search');
     Route::get('transactions/{transaction}/pdf', [Admin\TransactionController::class, 'printPdf'])->name('transactions.pdf');
-    Route::resource('transactions', Admin\TransactionController::class)->only(['index','create','store','show']);
+    Route::resource('transactions', Admin\TransactionController::class)->only(['index','create','store','show','destroy']);
 
     Route::get('reports', [Admin\ReportController::class, 'index'])->name('reports');
     Route::get('reports/pdf', [Admin\ReportController::class, 'exportPdf'])->name('reports.pdf');
@@ -57,6 +57,7 @@ Route::middleware(['auth', 'role:apoteker'])->prefix('apoteker')->name('apoteker
 
     Route::get('reports', [Apoteker\ReportController::class, 'index'])->name('reports');
     Route::get('reports/pdf', [Apoteker\ReportController::class, 'exportPdf'])->name('reports.pdf');
+    Route::delete('reports/{transaction}', [Apoteker\ReportController::class, 'destroy'])->name('reports.destroy');
 });
 
 // Pelanggan Routes
