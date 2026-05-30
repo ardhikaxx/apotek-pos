@@ -45,7 +45,7 @@
                         <th class="py-3 border-0">Nominal Bayar</th>
                         <th class="py-3 border-0">Kembalian</th>
                         <th class="py-3 border-0">Waktu</th>
-                        <th class="px-4 py-3 border-0 text-end"></th>
+                        <th class="px-4 py-3 border-0 text-end">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,9 +72,18 @@
                             <span class="badge bg-light text-dark fw-normal rounded-pill">{{ $tx->transaction_date->format('H:i') }} WIB</span>
                         </td>
                         <td class="px-4 text-end">
-                            <a href="{{ route('apoteker.pos.show', $tx) }}" class="btn btn-sm btn-light border-0 rounded-pill hover-primary">
-                                <i class="fa fa-eye text-primary"></i>
-                            </a>
+                            <div class="d-flex justify-content-end gap-2">
+                                <a href="{{ route('apoteker.pos.show', $tx) }}" class="btn btn-sm btn-light border-0 rounded-pill hover-primary">
+                                    <i class="fa fa-eye text-primary"></i>
+                                </a>
+                                <form action="{{ route('apoteker.reports.destroy', $tx) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus transaksi ini? Stok akan dikembalikan.')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-light border-0 rounded-pill hover-danger">
+                                        <i class="fa fa-trash text-danger"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                     @empty
@@ -104,6 +113,12 @@
         background-color: var(--primary-color) !important;
     }
     .hover-primary:hover i {
+        color: white !important;
+    }
+    .hover-danger:hover {
+        background-color: #dc3545 !important;
+    }
+    .hover-danger:hover i {
         color: white !important;
     }
 </style>
