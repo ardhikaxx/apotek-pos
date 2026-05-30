@@ -101,8 +101,8 @@
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0">
-                        <thead class="bg-light text-secondary">
+                    <table class="table table-hover align-middle mb-0 text-nowrap-table">
+                        <thead class="bg-light">
                             <tr>
                                 <th class="px-4 py-3 border-0 small text-uppercase fw-bold" style="letter-spacing: 0.05em;">Nomor Invoice</th>
                                 <th class="py-3 border-0 small text-uppercase fw-bold" style="letter-spacing: 0.05em;">Kasir</th>
