@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Apoteker;
 
 use App\Http\Controllers\Controller;
 use App\Models\Transaction;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class ReportController extends Controller
@@ -34,5 +36,21 @@ class ReportController extends Controller
                   ->setPaper('a4', 'landscape');
 
         return $pdf->stream('laporan-hari-ini.pdf');
+    }
+
+    public function destroy(Transaction $transaction)
+    {
+        DB::transaction(function () use ($transaction) {
+            foreach ($transaction->items as $item) {
+                $product = Product::find($item->product_id);
+                if ($product) {
+                    $product->increment('stock', $item->qty);
+                }
+            }
+            $transaction->items()->delete();
+            $transaction->delete();
+        });
+
+        return redirect()->route('apoteker.reports')->with('success', 'Transaksi berhasil dihapus dan stok dikembalikan.');
     }
 }
