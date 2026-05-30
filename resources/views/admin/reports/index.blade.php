@@ -63,8 +63,8 @@
 <div class="card overflow-hidden">
     <div class="card-body p-0">
         <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="bg-light text-secondary small text-uppercase fw-bold">
+            <table class="table table-hover align-middle mb-0 text-nowrap-table">
+                <thead class="bg-light">
                     <tr>
                         <th class="px-4 py-3 border-0">Nomor Invoice</th>
                         <th class="py-3 border-0">Kasir</th>
