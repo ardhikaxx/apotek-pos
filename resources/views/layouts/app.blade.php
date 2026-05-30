@@ -157,6 +157,24 @@
         
         /* Firefox Support */
         * { scrollbar-width: thin; scrollbar-color: rgba(148, 163, 184, 0.2) transparent; }
+
+        @media (max-width: 767.98px) {
+            /* General Mobile Refinements */
+            .main-content { padding: 1rem !important; }
+            .topbar { padding: 0.75rem 1rem !important; margin: -1rem -1rem 1rem !important; }
+            .card { border-radius: 12px !important; }
+            
+            /* Ensure tables remain tables but with smaller font and better padding on mobile */
+            .table { font-size: 0.85rem; }
+            .table th, .table td { padding: 0.75rem 0.5rem !important; }
+            
+            /* Responsive table wrapper refinement */
+            .table-responsive {
+                border-radius: 12px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
     </style>
     @stack('styles')
 </head>
