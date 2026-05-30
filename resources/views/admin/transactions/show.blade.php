@@ -40,8 +40,8 @@
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table align-middle">
-                        <thead class="bg-light text-secondary small text-uppercase fw-bold">
+                    <table class="table table-hover align-middle mb-0 text-nowrap-table">
+                        <thead class="bg-light">
                             <tr>
                                 <th class="py-3">Produk</th>
                                 <th class="py-3 text-center">Qty</th>
