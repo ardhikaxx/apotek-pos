@@ -73,7 +73,7 @@
                             <tr>
                                 <td class="ps-4">
                                     <div class="d-flex align-items-center">
-                                        <div class="bg-primary bg-opacity-10 text-primary p-2 rounded me-3">
+                                        <div class="bg-primary bg-opacity-10 text-primary p-2 rounded me-3 d-none d-md-block">
                                             <i class="fa fa-pills"></i>
                                         </div>
                                         <div>
