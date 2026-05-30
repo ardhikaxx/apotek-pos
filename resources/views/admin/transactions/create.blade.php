@@ -22,6 +22,10 @@
         position: sticky;
         top: 90px;
     }
+    @media (max-width: 991.98px) {
+        .cart-card { position: static; }
+        .pos-container { min-height: auto; }
+    }
     .cart-item-qty { width: 60px; text-align: center; }
     #search-results { max-height: 550px; overflow-y: auto; scrollbar-width: thin; }
     .total-banner {
