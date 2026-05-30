@@ -59,6 +59,13 @@
                                 <a href="{{ route('admin.transactions.pdf', $tx) }}" target="_blank" class="btn btn-sm btn-light border-0 rounded-pill hover-dark">
                                     <i class="fa fa-print text-dark"></i>
                                 </a>
+                                <form action="{{ route('admin.transactions.destroy', $tx) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus transaksi ini? Stok akan dikembalikan.')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-light border-0 rounded-pill hover-danger">
+                                        <i class="fa fa-trash text-danger"></i>
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
@@ -88,5 +95,7 @@
     .hover-info:hover i { color: white !important; }
     .hover-dark:hover { background-color: #212529 !important; }
     .hover-dark:hover i { color: white !important; }
+    .hover-danger:hover { background-color: #dc3545 !important; }
+    .hover-danger:hover i { color: white !important; }
 </style>
 @endsection
