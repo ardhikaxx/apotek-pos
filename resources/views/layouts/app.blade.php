@@ -158,21 +158,45 @@
         /* Firefox Support */
         * { scrollbar-width: thin; scrollbar-color: rgba(148, 163, 184, 0.2) transparent; }
 
+        /* Global Table Enhancements */
+        .table-responsive {
+            border-radius: 12px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .table thead th {
+            background-color: #f8fafc;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            color: #64748b;
+            border-top: none;
+            white-space: nowrap;
+        }
+        .text-nowrap-table td, .text-nowrap-table th {
+            white-space: nowrap;
+        }
+
         @media (max-width: 767.98px) {
             /* General Mobile Refinements */
             .main-content { padding: 1rem !important; }
             .topbar { padding: 0.75rem 1rem !important; margin: -1rem -1rem 1rem !important; }
             .card { border-radius: 12px !important; }
             
-            /* Ensure tables remain tables but with smaller font and better padding on mobile */
-            .table { font-size: 0.85rem; }
-            .table th, .table td { padding: 0.75rem 0.5rem !important; }
+            /* Enhanced Table Mobile Experience */
+            .table { font-size: 0.8rem; }
+            .table th, .table td { 
+                padding: 0.75rem 0.75rem !important; 
+                vertical-align: middle;
+            }
             
-            /* Responsive table wrapper refinement */
-            .table-responsive {
-                border-radius: 12px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+            /* Custom Scrollbar for Mobile Tables */
+            .table-responsive::-webkit-scrollbar {
+                height: 4px;
+            }
+            .table-responsive::-webkit-scrollbar-thumb {
+                background: rgba(14, 165, 233, 0.2);
+                border-radius: 10px;
             }
         }
     </style>
