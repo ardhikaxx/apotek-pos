@@ -1,0 +1,64 @@
+PENJELASAN FITUR SISTEM INFORMASI APOTEK BERDASARKAN ROLE PENGGUNA
+
+ROLE ADMIN
+Role Admin merupakan pemegang otoritas tertinggi dalam sistem manajemen apotek ini, yang bertanggung jawab atas pengelolaan seluruh data master dan pengawasan operasional secara menyeluruh. Pada halaman Dashboard, Admin dapat melihat ringkasan statistik performa apotek untuk memantau kondisi bisnis secara cepat. Fitur utama Admin mencakup manajemen katalog medis, di mana Admin memiliki akses penuh pada halaman kategori untuk mengelompokkan obat serta halaman produk untuk mengelola detail obat, termasuk harga, stok, dan pemantauan masa kedaluwarsa melalui halaman produk expired. Selain itu, Admin mengelola hubungan dengan pihak eksternal melalui halaman supplier untuk mendata pemasok obat dan halaman customer untuk mengelola basis data pelanggan. Dari sisi operasional pengadaan, Admin mengelola halaman purchase atau pembelian untuk mencatat masuknya stok dari supplier beserta detail itemnya. Admin juga memiliki wewenang penuh dalam manajemen pengguna pada halaman user, yang memungkinkannya untuk membuat atau mengedit akun bagi staf lain seperti Apoteker. Terakhir, Admin didukung dengan fitur pelaporan yang sangat mendetail pada halaman report, di mana Admin dapat meninjau semua transaksi penjualan dan pembelian serta mencetaknya dalam format PDF sebagai bahan evaluasi manajemen.
+
+Detail Fitur Halaman Admin:
+1. Dashboard:
+   - Menampilkan total jenis produk yang terdaftar.
+   - Menampilkan jumlah akun pengguna (staff) aktif.
+   - Menampilkan total nominal penjualan hari ini.
+   - Menampilkan total nominal penjualan bulan berjalan.
+   - Indikator stok kritis (produk dengan stok 0).
+   - Daftar 5 transaksi terbaru untuk pengawasan cepat.
+2. Manajemen Produk & Kategori:
+   - Kategori: Mengatur pengelompokan obat berdasarkan jenis atau kegunaan.
+   - Produk: Mengelola nama obat, satuan (unit), harga beli, harga jual, dan stok awal.
+   - Expired: Halaman khusus yang menampilkan produk yang telah melewati masa kedaluwarsa.
+3. Manajemen Supplier & Customer:
+   - Supplier: Pendataan identitas pemasok (nama, kontak, alamat) untuk kebutuhan stok.
+   - Customer: Basis data pelanggan tetap apotek.
+4. Manajemen Pembelian (Purchase):
+   - Input pembelian stok baru dari supplier terpilih.
+   - Pemilihan banyak produk dalam satu nota pembelian.
+   - Update otomatis stok produk dan harga beli setelah transaksi disimpan.
+   - Riwayat detail nota pembelian beserta item yang dibeli.
+5. Manajemen User:
+   - Membuat akun baru untuk Admin atau Apoteker.
+   - Mengatur status aktif/nonaktif akun staf.
+6. Laporan (Report):
+   - Filter laporan berdasarkan rentang tanggal tertentu.
+   - Perhitungan otomatis total pendapatan dalam periode terpilih.
+   - Cetak laporan penjualan ke format PDF.
+
+ROLE APOTEKER
+Role Apoteker berfokus pada sisi operasional harian, khususnya dalam pelayanan langsung kepada pelanggan dan pemeliharaan ketersediaan obat di apotek. Halaman utama bagi Apoteker adalah Dashboard yang menyajikan informasi relevan terkait aktivitas kefarmasian harian. Fitur sentral bagi role ini adalah sistem Point of Sale (POS) atau halaman transaksi, yang dirancang untuk memproses penjualan obat secara efisien, mulai dari pemilihan produk, penghitungan total harga, hingga pencetakan struk atau nota transaksi dalam format PDF sebagai bukti pembayaran pelanggan. Apoteker juga memiliki akses ke halaman produk untuk memantau ketersediaan stok secara real-time, memperbarui data obat, serta memastikan tidak ada obat kedaluwarsa yang terjual melalui halaman pemantauan produk expired. Dalam hal akuntabilitas, Apoteker dapat mengakses halaman report untuk melihat riwayat penjualan yang telah dilakukan dan menghasilkan laporan penjualan periodik. Peran ini memastikan bahwa alur keluar masuknya obat di meja kasir tercatat dengan akurat dan pelayanan kepada pasien berjalan dengan standar yang ditetapkan.
+
+Detail Fitur Halaman Apoteker:
+1. Dashboard:
+   - Statistik jumlah transaksi yang dilakukan apoteker hari ini.
+   - Total nominal penjualan pribadi pada hari ini.
+   - Alert stok kosong untuk segera melakukan pengadaan.
+   - Daftar transaksi terakhir yang diproses.
+2. Point of Sale (POS) / Transaksi:
+   - Fitur pencarian produk cepat saat melayani pelanggan.
+   - Keranjang belanja digital untuk input banyak obat sekaligus.
+   - Kalkulasi otomatis subtotal dan total bayar.
+   - Cetak struk belanja PDF sebagai bukti transaksi bagi pelanggan.
+3. Monitoring Stok:
+   - Melihat daftar produk beserta sisa stok dan tanggal kedaluwarsa.
+   - Filter produk expired untuk memisahkan obat yang sudah tidak layak jual.
+4. Laporan Penjualan:
+   - Melihat riwayat transaksi yang pernah dilakukan.
+   - Cetak rekap penjualan harian/bulanan ke format PDF.
+
+ROLE PELANGGAN
+Role Pelanggan memiliki akses yang lebih terbatas dan bersifat informatif, yang bertujuan untuk memberikan kemudahan dalam mencari informasi produk medis yang tersedia di apotek. Pelanggan berinteraksi dengan sistem melalui halaman katalog produk, di mana mereka dapat menjelajahi daftar obat-obatan yang dijual beserta informasi kategori masing-masing. Setiap produk dilengkapi dengan halaman detail produk yang memberikan penjelasan lebih mendalam mengenai kegunaan, komposisi, serta harga obat tersebut. Fitur ini memungkinkan pelanggan untuk melakukan pengecekan ketersediaan obat secara mandiri sebelum datang ke apotek atau melakukan pembelian. Fokus utama dari halaman untuk pelanggan adalah transparansi informasi dan kemudahan navigasi, sehingga calon pembeli mendapatkan pengalaman yang informatif dalam mencari kebutuhan kesehatan mereka tanpa harus berinteraksi langsung dengan admin atau apoteker terlebih dahulu di tahap awal pencarian.
+
+Detail Fitur Halaman Pelanggan:
+1. Katalog Produk:
+   - Pencarian obat berdasarkan nama melalui kolom search.
+   - Tampilan grid produk dengan informasi harga dan kategori.
+2. Detail Produk:
+   - Informasi lengkap mengenai nama obat, unit (satuan), dan harga.
+   - Keterangan status ketersediaan stok (Ready/Kosong).
