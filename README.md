@@ -1,4 +1,4 @@
-# 💊 Apotek App - Sistem Informasi Manajemen Apotek
+﻿# 💊 Apotek App - Sistem Informasi Manajemen Apotek
 
 Apotek App adalah platform manajemen farmasi modern yang dibangun dengan Laravel 12. Sistem ini dirancang untuk menyederhanakan operasional apotek, mulai dari manajemen inventaris, pencatatan pembelian stok, hingga transaksi kasir (POS) yang cepat dan akurat.
 
@@ -118,7 +118,7 @@ Jika project ini bermanfaat, Anda dapat mendukung pengembangan selanjutnya melal
 
 <div align="center">
 
-![QRIS](public/assets/qris.png)
+<img src="public/assets/qris.png" alt="QRIS" width="250" />
 
 **Scan QRIS di atas untuk berdonasi**
 
